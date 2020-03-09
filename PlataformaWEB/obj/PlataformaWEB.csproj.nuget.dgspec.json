@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alex Sánchez Ortega\\Desktop\\Aplicación\\PlataformaWEB\\PlataformaWEB.csproj": {}
+    "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\PlataformaWEB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alex Sánchez Ortega\\Desktop\\Aplicación\\PlataformaWEB\\PlataformaWEB.csproj": {
+    "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\PlataformaWEB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\Aplicación\\PlataformaWEB\\PlataformaWEB.csproj",
+        "projectUniqueName": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\PlataformaWEB.csproj",
         "projectName": "PlataformaWEB",
-        "projectPath": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\Aplicación\\PlataformaWEB\\PlataformaWEB.csproj",
+        "projectPath": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\PlataformaWEB.csproj",
         "packagesPath": "C:\\Users\\Alex Sánchez Ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\Aplicación\\PlataformaWEB\\obj\\",
+        "outputPath": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

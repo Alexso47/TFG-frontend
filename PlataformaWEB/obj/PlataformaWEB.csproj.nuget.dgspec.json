@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\PlataformaWEB.csproj": {}
+    "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\PlataformaWEB\\PlataformaWEB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\PlataformaWEB.csproj": {
+    "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\PlataformaWEB\\PlataformaWEB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\PlataformaWEB.csproj",
+        "projectUniqueName": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\PlataformaWEB\\PlataformaWEB.csproj",
         "projectName": "PlataformaWEB",
-        "projectPath": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\PlataformaWEB.csproj",
-        "packagesPath": "C:\\Users\\Alex Sánchez Ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alex Sánchez Ortega\\Desktop\\TFG\\PlataformaWEB\\obj\\",
+        "projectPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\PlataformaWEB\\PlataformaWEB.csproj",
+        "packagesPath": "X:\\Usuarios\\aleko\\.nuget\\packages\\",
+        "outputPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\PlataformaWEB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Alex Sánchez Ortega\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "X:\\Usuarios\\aleko\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

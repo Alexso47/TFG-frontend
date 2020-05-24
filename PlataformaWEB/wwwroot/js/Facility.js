@@ -1,4 +1,4 @@
-﻿function removeFacility() {
+function removeFacility() {
     var removeFacilities = $('#facilities').val();
     $('#facilities option:selected').remove();
     var listFacilities = $("#txthdnFacilities").val().split('/n');

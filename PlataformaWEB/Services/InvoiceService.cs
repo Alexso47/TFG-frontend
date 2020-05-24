@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using PlataformaWEB.Configuration;

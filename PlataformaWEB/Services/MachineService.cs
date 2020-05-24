@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using PlataformaWEB.Configuration;
 using PlataformaWEB.Dto;

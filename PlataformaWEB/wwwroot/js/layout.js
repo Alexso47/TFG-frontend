@@ -1,4 +1,4 @@
-﻿
+
 function dropd(classname) {
     
     var dropdowns = ['dropdown-container-user', 'dropdown-container-admin', 'dropdown-container-manag', 'dropdown-container-op', 'dropdown-container-rep', 'dropdown-container-mon']

@@ -1,4 +1,4 @@
-﻿function removeSerial() {
+function removeSerial() {
     var removeSerials = $('#serials').val();
     $('#serials option:selected').remove();
     var listSerials = $("#txthdnSerials").val().split('/n');

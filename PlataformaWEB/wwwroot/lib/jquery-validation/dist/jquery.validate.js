@@ -387,7 +387,7 @@ $.extend( $.validator, {
 			this.errorContext = this.labelContainer.length && this.labelContainer || $( this.currentForm );
 			this.containers = $( this.settings.errorContainer ).add( this.settings.errorLabelContainer );
 			this.submitted = {};
-			thisCache = {};
+			this.valueCache = {};
 			this.pendingRequest = 0;
 			this.pending = {};
 			this.invalid = {};

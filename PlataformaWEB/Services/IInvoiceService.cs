@@ -1,4 +1,4 @@
-﻿using PlataformaWEB.Models;
+using PlataformaWEB.Models;
 using PlataformaWEB.Models.Reports;
 using System;
 using System.Collections.Generic;

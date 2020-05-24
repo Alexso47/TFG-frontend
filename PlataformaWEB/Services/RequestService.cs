@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Server.HttpSys;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;

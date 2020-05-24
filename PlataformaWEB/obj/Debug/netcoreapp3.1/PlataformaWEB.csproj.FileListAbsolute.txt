@@ -122,3 +122,4 @@ X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csprojAssemblyReference.cache

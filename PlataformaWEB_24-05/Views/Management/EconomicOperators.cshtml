@@ -1,0 +1,198 @@
+﻿@model PlataformaWEB.Models.EconomicOperator
+
+@{
+    ViewData["Title"] = "EconomicOperators";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/mainbody.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+
+
+<script>
+
+    function CleanFields() {
+        $('#eoid-id').val("");
+        $('#eoid-name').val("");
+        $('#eoid-description').val("");
+        $('#eoid-address').val("");
+        $('#eoid-zipcode').val("");
+        $('#eoid-city').val("");
+        $('#eoid-country').val("");
+        $('#eoid-activefrom').val("");
+    }
+
+    function NewEconomicOperator() {
+        $("#new-EOIDs").css("display", "flex");
+        $("#edit-EOIDs").css("display", "none");
+        CleanFields();
+    }
+    
+    function editEOID(value) {
+        var modelId = value.options[value.selectedIndex].text;
+        CleanFields();
+
+        $.ajax({
+            cache: false,
+            type: 'GET',
+            url: '/ManagementController/EditEconomicOperator',
+            data: {
+                eoid : modelId
+            },
+            success: function (response) {
+                if (response.status == 'OK') {
+                    var result = response.data
+                    $('#eoid-name').val(result.name);
+                    $('#eoid-description').val(result.description);
+                    $('#eoid-address').val(result.address);
+                    $('#eoid-zipcode').val(result.zipCode);
+                    $('#eoid-city').val(result.city);
+                    $('#eoid-country').val(result.country);
+                    $('#eoid-activefrom').val(result.activeFrom.substr(0, 10));
+                }
+                else {
+                    CleanFields();
+                }
+            }
+        })
+    }
+    
+
+</script>
+
+<h1 class="title">@ViewData["Title"]</h1>
+<div class="sep"></div>
+
+<div class="row">
+    <form class="form-x" asp-controller="ManagementController" asp-action="EconomicOperator" method="post" enctype="multipart/form-data">
+        <div id="msg_error" style="visibility:hidden;display:none;">
+            <a class="close" data-dismiss="alert" aria-label="close" id="btnClosePopUp">x</a>
+            <span style="text-align: left"></span>
+        </div>
+        <div class="row" id="edit-EOIDs">
+            <label class="col-2 control-label">EOIDs*</label>
+            <div class="col-4">
+                <select asp-for="Id" class="dropdown-Ids" data-val-required="El campo EOIDs no debe estar vacío"
+                        asp-items="@(new SelectList(ViewBag.EOIDs,"Value","Text"))" onchange="editEOID(this)"></select>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row" id="new-EOIDs">
+            <label class="col-2 control-label">Id*</label>
+            <div class="col-9">
+                <input asp-for="Id" placeholder="EconomicOperator" id="eoid-id" data-val-required="El campo EOID no debe estar vacío" />
+                <div class="row">
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Nombre*</label>
+            <div class="col-9">
+                <input asp-for="Name" placeholder="Nombre" id="eoid-name" data-val-required="El campo Nombre no debe estar vacío" />
+                <div class="row">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Descripción</label>
+            <div class="col-9">
+                <input asp-for="Description" id="eoid-description" placeholder="Descripción" />
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Dirección*</label>
+            <div class="col-9">
+                <input asp-for="Address" placeholder="Dirección" id="eoid-address" data-val-required="El campo Dirección no debe estar vacío" />
+                <div class="row">
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">CP*</label>
+            <div class="col-2">
+                <input asp-for="ZipCode" placeholder="Código Postal" id="eoid-zipcode" data-val-required="El campo CP no debe estar vacío" />
+                <div class="row">
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </div>
+            </div>
+            <label class="col-1 control-label">Ciudad*</label>
+            <div class="col-3">
+                <input asp-for="City" id="eoid-city" placeholder="Ciudad" />
+                <div class="row">
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+            <label class="col-1 control-label">País*</label>
+            <div class="col-2">
+                <select asp-for="Country" placeholder="País" id="eoid-country" data-val-required="El campo País no debe estar vacío"
+                        asp-items="@(new SelectList(ViewBag.Countries,"Value","Text"))"></select>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Activo desde</label>
+            <div class="col-3 demo-section k-content" id="ppp">
+                <div id="dtpickerSelect">
+                    <input type="date" id="eoid-activefrom" value="" asp-for="ActiveFrom" />
+                    <span asp-validation-for="ActiveFrom" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="content_data" style="margin-top:20px;">
+            <div class="col-3" style="text-align:left">
+                <button type="button" id="buttonNewOperator" class="btn btn-default" onclick="NewEconomicOperator()">
+                    Nuevo EconomicOperator
+                </button>
+            </div>
+            <div class="col-7" style="text-align:right">
+                <button type="button" id="buttonCancel" class="btn btn-default" onclick="javascript:window.location.reload(false);">
+                    Cancelar
+                </button>
+            </div>
+            <div class="col-2" style="text-align:right">
+                <button class="btn btn-primary" id="buttonSubmit" type="submit">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    #buttonNewOperator {
+        transition: all 0.2s ease 0s;
+        background-color: lightgrey;
+        color: black;
+        font-family: "Baloo Thambi 2", sans-serif;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 7px 10px 7px 10px;
+        font-size: 24px;
+        outline: none;
+    }
+
+    #buttonNewOperator:hover {
+        background-color: darkgrey;
+        color: white;
+        font-size: 24px;
+    }
+
+    #edit-EOIDs {
+        padding: 2px 5px 2px 5px;
+        text-align: center;
+        margin-left: 20px;
+        margin-bottom: 40px;
+    }
+
+    #new-EOIDs {
+        padding: 2px 5px 2px 5px;
+        text-align: center;
+        margin-left: 20px;
+        margin-bottom: 40px;
+        display: none;
+    }
+</style>

@@ -1,0 +1,131 @@
+﻿@model PlataformaWEB.Models.Arrival
+
+@{
+    ViewData["Title"] = "Registrar Recepción";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/mainbody.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+
+<h1 class="title">@ViewData["Title"]</h1>
+<div class="sep"></div>
+
+<script src="~/js/Serial.js"></script>
+
+<div class="row">
+    <form class="form-x" asp-controller="OperationsController" asp-action="Arrival" method="post" enctype="multipart/form-data">
+        <div id="msg_error" style="visibility:hidden;display:none;">
+            <a class="close" data-dismiss="alert" aria-label="close" id="btnClosePopUp">x</a>
+            <span style="text-align: left"></span>
+        </div>
+        <div class="row" id="sel-facility">
+            <label class="col-2 control-label">Facility*</label>
+            <div class="col-4">
+                <select asp-for="Facility" class="dropdown-Facilities" data-val-required="El campo Facility no debe estar vacío"
+                        asp-items="@(new SelectList(ViewBag.Facilities,"Value","Text"))"></select>
+                <span asp-validation-for="Facility" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Comentarios</label>
+            <div class="col-9">
+                <input asp-for="Comments" placeholder="Comentarios" />
+            </div>
+        </div>
+        <div class="sub">
+            <label class="subtitle" style="text-align:left;">Productos</label>
+            <div class="sep"></div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Añadir serial</label>
+            <div class="col-5">
+                <input placeholder="Serial" class="form-control" type="text" id="serialToAdd" />
+            </div>
+            <div class="col-3" style="text-align:left">
+                <button type="button" id="buttonNewSerial" class="btn btn-default" onclick="AddSerialToList()">
+                    Añadir
+                </button>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <div class="col-2 control-label">Seriales</div>
+            <div class="col-5" style="height:380px">
+                <select class="form-control" id="serials" style="height:350px" multiple ondblclick="removeSerial()">@ViewBag.Serials</select>
+                <input type="hidden" asp-for="Serials" id="txthdnSerials" value="@ViewBag.JsonSerials" />
+            </div>
+            <div class="col-3" style="text-align:left">
+                <button type="button" id="buttonRemoveSerial" class="btn btn-default" value="Remove selected" onclick="removeSerial()" >
+                    Eliminar seleccionado
+                </button>
+            </div>
+        </div>
+        <div class="row" id="content_data" style="margin-top:20px;">
+            <div class="col-9" style="text-align:right">
+                <button type="button" id="buttonCancel" class="btn btn-default" onclick="javascript:location.reload();">
+                    Cancelar
+                </button>
+            </div>
+            <div class="col-2" style="text-align:right">
+                <button class="btn btn-primary" id="buttonSubmit" type="submit">
+                    <i class="fa fa-save"></i>
+                    Registrar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    #buttonNewSerial {
+        transition: all 0.2s ease 0s;
+        background-color: lightgrey;
+        color: black;
+        font-family: "Baloo Thambi 2", sans-serif;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 7px 10px 7px 10px;
+        font-size: 20px;
+        outline: none;
+    }
+
+    #buttonNewSerial:hover {
+        background-color: darkgrey;
+        color: white;
+        font-size: 21px;
+    }
+
+    #buttonRemoveSerial {
+        transition: all 0.2s ease 0s;
+        background-color: lightgrey;
+        color: black;
+        font-family: "Baloo Thambi 2", sans-serif;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 7px 10px 7px 10px;
+        font-size: 20px;
+        outline: none;
+    }
+
+    #buttonRemoveSerial:hover {
+        background-color: darkgrey;
+        color: white;
+        font-size: 21px;
+    }
+
+    #sel-facility {
+        padding: 2px 5px 2px 5px;
+        text-align: center;
+        margin-left: 20px;
+        margin-bottom: 40px;
+    }
+
+    #new-EOIDs {
+        padding: 2px 5px 2px 5px;
+        text-align: center;
+        margin-left: 20px;
+        margin-bottom: 40px;
+        display: none;
+    }
+</style>
+

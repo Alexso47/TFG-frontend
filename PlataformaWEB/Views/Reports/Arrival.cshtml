@@ -1,0 +1,53 @@
+﻿@model ArrivalReport
+
+@{
+    ViewData["Title"] = "Informe de Recepciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="title">@ViewData["Title"]</h1>
+<div class="sep"></div>
+
+<link rel="stylesheet" href="~/css/mainbody.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+<link href="~/css/Tables.css" rel="stylesheet" />
+
+<script src="~/js/Tables.js"></script>
+
+<table id="dataTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="margin-top:100px;">
+    <thead>
+        <tr>
+            <th class="th-sm">
+                Facility
+
+            </th>
+            <th class="th-sm">
+                Comentarios
+
+            </th>
+            @*<th class="th-sm">
+                Seriales
+
+            </th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in Model.Elements)
+        {
+            <tr>
+                <td>@element.Facility</td>
+                <td>@element.Comments</td>
+                @*<td>button para las facilities</td>*@
+                @*<td>button para los seriales</td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+
+    input {
+        font-size: 20px;
+    }
+</style>
+

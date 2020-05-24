@@ -1,0 +1,139 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2');
+
+* {
+    font-size: 30px;
+    font-family: "Calibri", sans-serif;
+}
+
+.title {
+    font-weight: 400;
+    text-decoration: none;
+    padding: 5px 5px;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.sub {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.subtitle {
+    position: relative;
+    width: 100%;
+    font-weight: 400;
+    text-decoration: none;
+    padding:5px 0 5px 0;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.form-x {
+    width: 100%;
+}
+
+.sep {
+    width: 100%;
+    height: 1px;
+    margin:0 0 50px 0;
+    border:1px solid lightgrey;
+}
+
+#content_data{
+    padding:2px 5px 2px 5px;
+    text-align:center;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.col-2 {
+    text-align:right;
+}
+
+/*ACCIONES*/
+#buttonCancel, #buttonSubmit {
+    transition: all 0.3s ease 0s;
+    background-color: #E890D0;
+    color: white;
+    font-family: "Baloo Thambi 2", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 7px 10px 7px 10px;
+    font-size: 24px;
+    outline: none;
+}
+
+#buttonCancel, #buttonSubmit i {
+    transition: all 0.3s ease 0s;
+    background-color: #E890D0;
+    color: white;
+    font-size: 24px;
+}
+
+#buttonCancel:hover, #buttonSubmit:hover, #buttonSubmit:hover i{
+    background-color: #BF84AE;
+    color: black;
+}
+
+#buttonSubmit {
+    float: left;
+}
+
+#button-cancel-filters, #button-apply-filters {
+    transition: all 0.3s ease 0s;
+    background-color: #E890D0;
+    color: white;
+    font-family: "Baloo Thambi 2", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 4px 6px;
+    font-size: 18px;
+    outline: none;
+}
+
+#buttonCancel, #button-apply-filters i {
+    transition: all 0.3s ease 0s;
+    background-color: #E890D0;
+    color: white;
+    font-size: 24px;
+}
+
+#button-cancel-filters:hover, #button-apply-filters:hover, #button-apply-filters:hover i {
+    background-color: #BF84AE;
+    color: black;
+}
+
+#button-apply-filters {
+    float: left;
+}
+
+input {
+    width: 100%;
+    padding-left: 20px;
+    font-size: 25px;
+}
+
+input:hover {
+    transition: all 0.2s ease 0s;
+    background-color: whitesmoke;
+}
+
+select, option {
+    width: 100%;
+    padding-left: 20px;
+    font-size: 25px;
+}
+
+.text-danger {
+    color: lightcoral;
+    width: 95%;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 2px 5px 2px 5px;
+    text-align: left;
+    margin-left: 15px;
+}

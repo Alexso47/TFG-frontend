@@ -1,0 +1,215 @@
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.exe
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.deps.json
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.runtimeconfig.json
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.runtimeconfig.dev.json
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.dll
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.pdb
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.Views.dll
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.Views.pdb
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csprojAssemblyReference.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\staticwebassets\PlataformaWEB.StaticWebAssets.Manifest.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\staticwebassets\PlataformaWEB.StaticWebAssets.xml
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorAssemblyInfo.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorAssemblyInfo.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.AssemblyInfoInputs.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.AssemblyInfo.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.TagHelpers.input.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.TagHelpers.output.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorCoreGenerate.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorTargetAssemblyInfo.cache
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorTargetAssemblyInfo.cs
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.Views.pdb
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.dll
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.pdb
+C:\Users\Alex Sánchez Ortega\Desktop\TFG\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csproj.CopyComplete
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\appsettings.Development.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\appsettings.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.exe
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.deps.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.runtimeconfig.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.runtimeconfig.dev.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.pdb
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.Views.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.Views.pdb
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorAssemblyInfo.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorAssemblyInfo.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.AssemblyInfoInputs.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.AssemblyInfo.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.TagHelpers.input.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.TagHelpers.output.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorCoreGenerate.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorTargetAssemblyInfo.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorTargetAssemblyInfo.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.Views.pdb
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\staticwebassets\PlataformaWEB.StaticWebAssets.Manifest.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\staticwebassets\PlataformaWEB.StaticWebAssets.xml
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.pdb
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.genruntimeconfig.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csproj.CopyComplete
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ProductionLines.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Administration\Products.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Administration\Users.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Management\EconomicOperators.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Management\Facilities.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Management\Machines.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Management\Requests.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Monitoring\Audittrail.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Monitoring\Subscriptions.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Arrival.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Dispatch.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Invoice.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Order.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Payment.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Arrival.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Delivery.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Dispatch.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Invoice.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Order.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Payment.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Serial.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\User\Configuration.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\User\Profile.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csproj.CoreCompileInputs.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.MvcApplicationPartsAssemblyInfo.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csprojAssemblyReference.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\appsettings.Development.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\appsettings.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.exe
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.deps.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.runtimeconfig.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.runtimeconfig.dev.json
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.pdb
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.Views.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\PlataformaWEB.Views.pdb
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csprojAssemblyReference.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.AssemblyInfoInputs.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.AssemblyInfo.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csproj.CoreCompileInputs.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.MvcApplicationPartsAssemblyInfo.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorAssemblyInfo.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorAssemblyInfo.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.TagHelpers.input.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.TagHelpers.output.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorCoreGenerate.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ProductionLines.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Administration\Products.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Administration\Users.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Management\EconomicOperators.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Management\Facilities.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Management\Machines.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Management\Requests.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Monitoring\Audittrail.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Monitoring\Subscriptions.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Arrival.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Dispatch.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Invoice.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Order.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Operations\Payment.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Arrival.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Delivery.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Dispatch.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Invoice.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Order.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Payment.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Reports\Serial.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\User\Configuration.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\User\Profile.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorTargetAssemblyInfo.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.RazorTargetAssemblyInfo.cs
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.Views.pdb
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csproj.CopyComplete
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\staticwebassets\PlataformaWEB.StaticWebAssets.Manifest.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\staticwebassets\PlataformaWEB.StaticWebAssets.xml
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.pdb
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.genruntimeconfig.cache

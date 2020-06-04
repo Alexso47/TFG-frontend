@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\Api.csproj": {}
+    "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\API.csproj": {}
   },
   "projects": {
-    "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\Api.csproj": {
+    "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\Api.csproj",
-        "projectName": "Api",
-        "projectPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\Api.csproj",
+        "projectUniqueName": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\API.csproj",
+        "projectName": "API",
+        "projectPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\API.csproj",
         "packagesPath": "X:\\Usuarios\\aleko\\.nuget\\packages\\",
         "outputPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Api\\obj\\",
         "projectStyle": "PackageReference",

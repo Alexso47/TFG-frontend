@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "52BjBqdCyHqSDc+VoMhx0EaCOWo8HHh/6tCbPfIpusUkB/8RQq27JM33RfGpwpqiVnsxlVSHIez2EFbib2SE8A==",
+  "dgSpecHash": "Qs8Uzf2t+b2IjWADoctftWYLtFVUpUng4tyq8ZXjagzr+8fZ6lyCRvSi0zHbzVTijuUsHTCVki4G9/I0Sp6UlQ==",
   "success": true,
   "projectFilePath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
+    "X:\\Usuarios\\aleko\\.nuget\\packages\\mediatr\\8.0.0\\mediatr.8.0.0.nupkg.sha512",
+    "X:\\Usuarios\\aleko\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.0.0\\mediatr.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",
     "X:\\Usuarios\\aleko\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "X:\\Usuarios\\aleko\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

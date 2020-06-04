@@ -13,6 +13,6 @@ namespace PlataformaWEB.Services
 
         public Task<List<DispatchReport>> GetDispatches();
 
-        public Task<List<DispatchReport>> GetFilteredDispatches(DateFilters filters);
+        public Task<PaginatedList<DispatchReport>> GetFilteredDispatches(DispatchFilters filters);
     }
 }

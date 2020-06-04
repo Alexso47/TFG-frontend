@@ -243,5 +243,7 @@ X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\net
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\MediatR.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csproj.CoreCompileInputs.cache
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.MvcApplicationPartsAssemblyInfo.cache

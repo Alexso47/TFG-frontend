@@ -24,7 +24,7 @@ namespace PlataformaWEB.Services
         public DispatchService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = $"{settings.Value.AdministrationURL}/";
+            _remoteServiceBaseUrl = "http://localhost:5001/api/dispatch";
         }
 
         public async Task<string> RegisterDispatch(Dispatch dispatch)
@@ -58,7 +58,7 @@ namespace PlataformaWEB.Services
             return result;
         }
 
-        public async Task<List<DispatchReport>> GetFilteredDispatches(DateFilters filters)
+        public async Task<PaginatedList<DispatchReport>> GetFilteredDispatches(DispatchFilters filters)
         {
             var uri = API.Dispatch.GetFilteredDispatches(_remoteServiceBaseUrl, filters);
             var response = await _httpClient.GetAsync(uri);
@@ -69,7 +69,7 @@ namespace PlataformaWEB.Services
 
             response.EnsureSuccessStatusCode();
             var jsonResult = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<List<DispatchReport>>(jsonResult);
+            var result = JsonConvert.DeserializeObject<PaginatedList<DispatchReport>>(jsonResult);
             return result;
         }
 

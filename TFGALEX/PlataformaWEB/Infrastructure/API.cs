@@ -1,3 +1,4 @@
+using PlataformaWEB.Models;
 using PlataformaWEB.Models.Reports;
 using System;
 using System.Collections.Generic;
@@ -171,7 +172,7 @@ namespace PlataformaWEB.Infrastructure
             public static string GetFilteredInvoices(string baseUri, DateFilters filters)
             { 
                 return $"{baseUri}/GetFilteredInvoices?" +
-                    $"&from={filters.From:yyyy-MM-dd}" +
+                    $"from={filters.From:yyyy-MM-dd}" +
                     $"&to={filters.To:yyyy-MM-dd}";
             }
         }
@@ -187,11 +188,19 @@ namespace PlataformaWEB.Infrastructure
                 return $"{baseUri}";
             }
 
-            public static string GetFilteredDispatches(string baseUri, DateFilters filters)
+            public static string GetFilteredDispatches(string baseUri, DispatchFilters filters)
             {
-                return $"{baseUri}/GetFilteredDispatches?" +
-                    $"&from={filters.From:yyyy-MM-dd}" +
-                    $"&to={filters.To:yyyy-MM-dd}";
+                var id = filters.Id != null ? filters.Id : 0;
+
+                return $"{baseUri}/Summary?" +
+                    $"from={filters.From:yyyy-MM-dd}" +
+                    $"&to={filters.To:yyyy-MM-dd}" +
+                    $"&id={id}" +
+                    $"&fid={HttpUtility.UrlEncode(filters.FID)}" +
+                    $"&destinationfid={HttpUtility.UrlEncode(filters.DestinationFID)}" +
+                    $"&transportmode={HttpUtility.UrlEncode(filters.TransportMode)}" +
+                    $"&vehicle={HttpUtility.UrlEncode(filters.Vehicle)}" +
+                    $"&destinationeu={filters.DestinationEU}";
             }
         }
 

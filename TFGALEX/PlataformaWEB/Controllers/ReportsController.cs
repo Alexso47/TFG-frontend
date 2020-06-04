@@ -59,38 +59,25 @@ namespace PlataformaWEB.Controllers
         [HttpGet]
         public ActionResult Dispatch()
         {
-            var model = new DispatchReport();
-
-            DispatchReport d1 = new DispatchReport { Facility = "Fabrica 1", DispatchDate = DateTime.Now, DispatchHour = "6", DestinationFacilities = "Fabrica 8", DestinationCountry = "España" };
-            DispatchReport d2 = new DispatchReport { Facility = "Fabrica 2", DispatchDate = DateTime.Now.AddMonths(2), DispatchHour = "4", DestinationFacilities = "Fabrica 2", DestinationCountry = "Francia" };
-            model.Elements = new List<DispatchReport> { d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2, d1, d2 };
-
-            //try
-            //{
-            //    var dispatches = _dispatchService.GetDispatches();
-            //    model.Elements = dispatches.Result;
-            //}
-            //catch
-            //{
-            //    throw new RequestErrorException("Error obteniendo las facturas");
-            //}
+            var model = new DispatchFilters();
+            ViewBag.DispatchesReport = new List<DispatchReport>();
             return View(model);
         }
 
-        public ActionResult FilterDispatch(DispatchReport dispatchReport)
+        public ActionResult FilterDispatch(DispatchFilters filters)
         {
-            var model = new DispatchReport();
+            var model = new DispatchFilters();
 
             try
             {
-                var dispatches = _dispatchService.GetFilteredDispatches(dispatchReport.DateFilters);
-                model.Elements = dispatches.Result;
+                var dispatches = _dispatchService.GetFilteredDispatches(filters);
+                ViewBag.DispatchesReport = dispatches.Result.Items;
             }
             catch
             {
                 throw new RequestErrorException("Error obteniendo los envíos");
             }
-            return View(model);
+            return View("Dispatch",model);
         }
 
         // Invoice 

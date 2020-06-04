@@ -30,7 +30,16 @@ namespace Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+            //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+            optionsBuilder.UseSqlServer("Server=tfgalex.database.windows.net,1433;" +
+                "Initial Catalog=TFGAlex;" +
+                "Persist Security Info=False;" +
+                "User ID=alex;" +
+                "Password=Tefege1234." +
+                ";MultipleActiveResultSets=False;" +
+                "Encrypt=True;" +
+                "TrustServerCertificate=False;" +
+                "Connection Timeout=30;");
         }
 
     }

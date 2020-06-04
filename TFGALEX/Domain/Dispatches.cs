@@ -5,7 +5,7 @@ using System.Text;
 namespace Domain
 {
     public class Dispatches
-    {
+    { 
         public int Id { get; set; }
 
         public string FID { get; set; }
@@ -16,8 +16,19 @@ namespace Domain
 
         public string DestinationFID { get; set; }
 
+        public string DestinationCountry { get; set; }
+
+        public string DestinationCity { get; set; }
+
+        public string DestinationAddress { get; set; }
+
+        public string DestinationZipCode { get; set; }
+
         public string TransportMode { get; set; }
 
         public string Vehicle { get; set; }
+
+        public List<Serials> Serials { get; set; }
+
     }
 }

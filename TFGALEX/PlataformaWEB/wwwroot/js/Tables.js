@@ -26,6 +26,5 @@ $(document).ready(function () {
             }
         }
     });
-    $('.dataTables_length').addClass('bs-select');
-    
+    $('.dataTables_length').addClass('bs-select');   
 });

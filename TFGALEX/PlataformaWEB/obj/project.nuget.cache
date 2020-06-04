@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "UZWHMvkzjX2m0c1wVr4FwB3SRCR5SPDm7fM3ZKINSegPFX2y4sC+FZ6KHKZOmgDVG9Kw9rrsBmczS4TXSAOrdg==",
+  "dgSpecHash": "M34+NZoHBzI4hHuNfEas8o4WNGMOaWwJuH+76A6NxtRYKUs9nBHp7KVXyV0XwVch+HWdhN+gNCm4cyDpDW8SjQ==",
   "success": true,
   "projectFilePath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\PlataformaWEB\\PlataformaWEB.csproj",
   "expectedPackageFiles": [
+    "X:\\Usuarios\\aleko\\.nuget\\packages\\mediatr\\8.0.0\\mediatr.8.0.0.nupkg.sha512",
+    "X:\\Usuarios\\aleko\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.0.0\\mediatr.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",
     "X:\\Usuarios\\aleko\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "X:\\Usuarios\\aleko\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "X:\\Usuarios\\aleko\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",

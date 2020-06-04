@@ -23,7 +23,7 @@ namespace PlataformaWEB.Services
         public ArrivalService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = $"{settings.Value.AdministrationURL}/";
+            _remoteServiceBaseUrl = "http://localhost:5001/";
         }
 
         async public Task<string> Register(Arrival arrival)

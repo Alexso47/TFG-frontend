@@ -24,7 +24,7 @@ namespace PlataformaWEB.Services
         public InvoiceService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = $"{settings.Value.AdministrationURL}/api/administration/invoice";
+            _remoteServiceBaseUrl = "http://localhost:5001/api/administration/invoice";
         }
 
         async public Task<string> Register(Invoice invoice)

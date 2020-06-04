@@ -1,4 +1,4 @@
-@model DispatchReport
+@model DispatchFilters
 
 @{
     ViewData["Title"] = "Informe de Envíos";
@@ -20,14 +20,44 @@
             <label class="col-2 control-label">Fecha de envío desde</label>
             <div class="col-3 demo-section k-content" id="ppp">
                 <div id="dtpickerSelect">
-                    <input type="date" value="" asp-for="DateFilters.From" />
+                    <input type="date" value="" asp-for="From" />
                 </div>
             </div>
             <label class="col-2 control-label">Fecha de envío hasta</label>
             <div class="col-3 demo-section k-content" id="ppp">
                 <div id="dtpickerSelect">
-                    <input type="date" value="" asp-for="DateFilters.To" />
+                    <input type="date" value="" asp-for="To" />
                 </div>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Id del envío</label>
+            <div class="col-5">
+                <input placeholder="Id" class="form-control" type="text" asp-for="Id" />
+            </div>
+            <label class="col-2 control-label">Destinación en EU</label>
+            <div class="col-1">
+                <input type="checkbox" checked="checked" id="destinationEU" asp-for="DestinationEU" />
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Facility de envío</label>
+            <div class="col-3">
+                <input placeholder="Facility" class="form-control" type="text" asp-for="FID" />
+            </div>
+            <label class="col-2 control-label">Facility de destinacion</label>
+            <div class="col-3">
+                <input placeholder="Destination Facility" class="form-control" type="text" asp-for="DestinationFID" />
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">TransportMode</label>
+            <div class="col-3">
+                <input placeholder="TransportMode" class="form-control" type="text" asp-for="TransportMode" />
+            </div>
+            <label class="col-2 control-label">Vehicle</label>
+            <div class="col-3">
+                <input placeholder="Vehicle" class="form-control" type="text" asp-for="Vehicle" />
             </div>
         </div>
         <div class="row" id="content_data" style="margin-top:20px;">
@@ -47,11 +77,15 @@
 
 <div class="sep"></div>
 
-<table id="dataTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="margin-top:100px;">
+<table id="dataTable" class="table" cellspacing="0">
     <thead>
         <tr>
             <th class="th-sm">
-                Facility
+                ID
+
+            </th>
+            <th class="th-sm">
+                FID de envío
 
             </th>
             <th class="th-sm">
@@ -59,15 +93,11 @@
 
             </th>
             <th class="th-sm">
-                Hora de envío
-
-            </th>
-            <th class="th-sm">
                 Destino europeo
 
             </th>
             <th class="th-sm">
-                Facility ID
+                FID de destino
 
             </th>
             <th class="th-sm">
@@ -94,33 +124,35 @@
                 Vehiculo
 
             </th>
-            @*<th class="th-sm">
-            Seriales
+            <th class="th-sm">
+                Seriales
 
             </th>
-            <th class="th-sm">
-                Facilities
-
-            </th>*@
         </tr>
     </thead>
     <tbody>
-        @foreach (var element in Model.Elements)
+        @foreach (var element in ViewBag.DispatchesReport)
         {
             <tr>
-                <td>@element.Facility</td>
-                <td>@element.DispatchDate</td>
-                <td>@element.DispatchHour</td>
-                <td>@element.DestinationEU</td>
-                <td>@element.DestinationName</td>
+                <td>@element.Id</td>
+                <td>@element.FID</td>
+                <td>@element.DispatchDate.ToString("dd/MM/yyyy")</td>
+                @if (element.DestinationEU == true)
+                {
+                    <td>Si</td>
+                }
+                else
+                {
+                    <td>No</td>
+                }
+                <td>@element.DestinationFID</td>
                 <td>@element.DestinationCountry</td>
                 <td>@element.DestinationCity</td>
                 <td>@element.DestinationAddress</td>
                 <td>@element.DestinationZipCode</td>
                 <td>@element.TransportMode</td>
                 <td>@element.Vehicle</td>
-                @*<td>button para las facilities</td>*@
-                @*<td>button para los seriales</td>*@
+                <td>@element.SerialsJson</td>
             </tr>
         }
     </tbody>

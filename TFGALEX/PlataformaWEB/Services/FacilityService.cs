@@ -23,7 +23,7 @@ namespace PlataformaWEB.Services
         public FacilityService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = $"{settings.Value.AdministrationURL}/";
+            _remoteServiceBaseUrl = "http://localhost:5001/";
         }
 
         async public Task<int> Create(Facility facility)

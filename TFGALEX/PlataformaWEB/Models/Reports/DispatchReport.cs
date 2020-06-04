@@ -8,38 +8,30 @@ namespace PlataformaWEB.Models
 {
     public class DispatchReport
     {
-        public string Facility { get; set; }
+        public int Id { get; set; }
+
+        public string FID { get; set; }
 
         public DateTime DispatchDate { get; set; }
 
-        public string DispatchHour { get; set; }
-
-        public double UTCminutes { get; set; }
-
         public bool DestinationEU { get; set; }
 
-        public string DestinationFacilities { get; set; }
-
-        public List<string> DestinationFacilitiesList { get; set; }
-
-        public string DestinationName { get; set; }
+        public string DestinationFID { get; set; }
 
         public string DestinationCountry { get; set; }
 
-        public string DestinationAddress { get; set; }
-
         public string DestinationCity { get; set; }
+
+        public string DestinationAddress { get; set; }
 
         public string DestinationZipCode { get; set; }
 
-        public List<string> SerialList { get; set; }
-
-        public int TransportMode { get; set; }
+        public string TransportMode { get; set; }
 
         public string Vehicle { get; set; }
 
-        public List<DispatchReport> Elements { get; set; }
+        public List<Serials> Serials { get; set; }
 
-        public DateFilters DateFilters { get; set; }
+        public string SerialsJson { get; set; }
     }
 }

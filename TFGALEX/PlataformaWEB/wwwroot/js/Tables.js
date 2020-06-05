@@ -12,7 +12,7 @@ $(document).ready(function () {
             "lengthMenu": "Mostrar _MENU_",
             "loadingRecords": "Cargando...",
             "processing": "Procesando...",
-            "search": "Buscar:",
+            "search": "Filtrar contenido:",
             "zeroRecords": "Sin resultados encontrados",
             "paginate": {
                 "first": "Primero",

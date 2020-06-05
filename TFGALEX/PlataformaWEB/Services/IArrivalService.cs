@@ -9,5 +9,9 @@ namespace PlataformaWEB.Services
     public interface IArrivalService
     {
         public Task<string> Register(Arrival arrival);
+
+        public Task<PaginatedList<ArrivalReport>> GetArrivals();
+
+        public Task<PaginatedList<ArrivalReport>> GetFilteredArrivals(ArrivalFilters filters);
     }
 }

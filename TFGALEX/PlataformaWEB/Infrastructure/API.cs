@@ -147,6 +147,37 @@ namespace PlataformaWEB.Infrastructure
             {
                 return $"{baseUri}/arrivalToFacility";
             }
+
+            public static string GetArrivals(string baseUri)
+            {
+                return $"{baseUri}";
+            }
+
+            public static string GetFilteredArrivals(string baseUri, ArrivalFilters filters)
+            {
+                var id = filters.Id != null ? filters.Id : 0;
+
+                string from = filters.From.HasValue ? EscapeDataString(filters.From.Value.ToString("o")) : string.Empty;
+                string to = filters.To.HasValue ? EscapeDataString(filters.To.Value.ToString("o")) : string.Empty;
+
+                return $"{baseUri}/Summary?" +
+                    $"CreationDateFrom={from}" +
+                    $"&CreationDateTo={to}" +
+                    $"&id={id}" +
+                    $"&fid={HttpUtility.UrlEncode(filters.FID)}";
+            }
+        }
+
+        public static class Serial
+        {
+            public static string GetFilteredSerials(string baseUri, SerialFilters filters)
+            {
+                var id = filters.Id != null ? filters.Id : 0;
+
+                return $"{baseUri}/Summary?" +
+                    $"id={id}" +
+                    $"&serial={HttpUtility.UrlEncode(filters.Serial)}";
+            }
         }
 
         public static class Currency
@@ -169,11 +200,23 @@ namespace PlataformaWEB.Infrastructure
                 return $"{baseUri}";
             }
 
-            public static string GetFilteredInvoices(string baseUri, DateFilters filters)
-            { 
-                return $"{baseUri}/GetFilteredInvoices?" +
-                    $"from={filters.From:yyyy-MM-dd}" +
-                    $"&to={filters.To:yyyy-MM-dd}";
+            public static string GetFilteredInvoices(string baseUri, InvoiceFilters filters)
+            {
+                var id = filters.Id != null ? filters.Id : 0;
+                var price = filters.Price != null ? filters.Price : 0;
+
+                string from = filters.From.HasValue  ? EscapeDataString(filters.From.Value.ToString("o")) : string.Empty;
+                string to = filters.To.HasValue ? EscapeDataString(filters.To.Value.ToString("o")) : string.Empty;
+
+                return $"{baseUri}/Summary?" +
+                    $"CreationDateFrom={from}" +
+                    $"&CreationDateTo={to}" +
+                    $"&id={id}" +
+                    $"&price={price}" +
+                    $"&currency={HttpUtility.UrlEncode(filters.Currency)}" +
+                    $"&buyereu={filters.BuyerEU}" +
+                    $"&buyerid={HttpUtility.UrlEncode(filters.BuyerID)}";
+
             }
         }
         public static class Dispatch
@@ -192,9 +235,12 @@ namespace PlataformaWEB.Infrastructure
             {
                 var id = filters.Id != null ? filters.Id : 0;
 
+                string from = filters.From.HasValue ? EscapeDataString(filters.From.Value.ToString("o")) : string.Empty;
+                string to = filters.To.HasValue ? EscapeDataString(filters.To.Value.ToString("o")) : string.Empty;
+
                 return $"{baseUri}/Summary?" +
-                    $"from={filters.From:yyyy-MM-dd}" +
-                    $"&to={filters.To:yyyy-MM-dd}" +
+                    $"CreationDateFrom={from}" +
+                    $"&CreationDateTo={to}" +
                     $"&id={id}" +
                     $"&fid={HttpUtility.UrlEncode(filters.FID)}" +
                     $"&destinationfid={HttpUtility.UrlEncode(filters.DestinationFID)}" +

@@ -11,9 +11,9 @@ namespace PlataformaWEB.Services
     {
         public Task<string> Register(Invoice invoice);
 
-        public Task<List<InvoiceReport>> GetInvoices();
+        public Task<PaginatedList<InvoiceReport>> GetInvoices();
         
-        public Task<List<InvoiceReport>> GetFilteredInvoices(DateFilters filters);
+        public Task<PaginatedList<InvoiceReport>> GetFilteredInvoices(InvoiceFilters filters);
 
         
     }

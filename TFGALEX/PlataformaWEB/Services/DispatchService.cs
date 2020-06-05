@@ -77,8 +77,8 @@ namespace PlataformaWEB.Services
         {
             double hours = 0.0;
             double.TryParse(dispatch.DispatchHour, out hours);
-            var dispatchDateTime = dispatch.DispatchDate.AddHours(hours).DateTime;
-            var DispatchDateOffset = new DateTimeOffset(dispatchDateTime, TimeSpan.FromMinutes(0)).AddMinutes(dispatch.UTCminutes);
+            var dispatchDateTimeOffset = dispatch.DispatchDate.AddHours(hours).DateTime;
+            var DispatchDateOffset = new DateTimeOffset(dispatchDateTimeOffset, TimeSpan.FromMinutes(0)).AddMinutes(dispatch.UTCminutes);
             return new DispatchDto()
             {
                 DestinationAddress = dispatch.DestinationAddress,

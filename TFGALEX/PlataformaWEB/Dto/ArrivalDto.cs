@@ -16,6 +16,6 @@ namespace PlataformaWEB.Dto
     public class Arrival2FacilityReference
     { 
         public string FacilityID { get; set; }
-        public DateTime EventTime { get; set; }
+        public DateTimeOffset EventTime { get; set; }
     }
 }

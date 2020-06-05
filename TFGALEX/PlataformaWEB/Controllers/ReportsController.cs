@@ -17,41 +17,50 @@ namespace PlataformaWEB.Controllers
         private IArrivalService _arrivalService;
         private IInvoiceService _invoiceService;
         private IDispatchService _dispatchService;
+        private ISerialService _serialService;
 
 
-        public ReportsController(IFacilityService facilityService, IArrivalService arrivalService, IInvoiceService invoiceService, IDispatchService dispatchService)
+        public ReportsController(IFacilityService facilityService, IArrivalService arrivalService, IInvoiceService invoiceService, IDispatchService dispatchService, ISerialService serialService)
         {
             _facilityService = facilityService;
             _arrivalService = arrivalService;
             _invoiceService = invoiceService;
             _dispatchService = dispatchService;
+            _serialService = serialService;
         }
 
         // Arrival 
         [Route("~/ReportsController/Arrival")]
         public ActionResult Arrival()
         {
-            var model = new ArrivalReport();
+            var model = new ArrivalFilters();
 
-            ArrivalReport a1 = new ArrivalReport { Facility = "Fabrica 1", Comments= "ASDFGHJKLMNBVCXZQWERTYUIOP/nASDFGHJKLMNBVCXZQWERTYUIOP/nASDFGHJKLMNBVCXZQWERTYUIOP/n" };
-            ArrivalReport a2 = new ArrivalReport { Facility = "Fabrica 3", Comments= "ASDFGHJKLMNBVCXZQWERTYUIOP/nASDFGHJKLMNBVCXZQWERTYUIOP/nASDFGHJKLMNBVCXZQWERTYUIOP/n" };
-            model.Elements = new List<ArrivalReport> { a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2, a1, a2};
+            try
+            {
+                var arrivals = _arrivalService.GetFilteredArrivals(model);
+                ViewBag.ArrivalsReport = arrivals.Result.Items;
+            }
+            catch
+            {
+                throw new RequestErrorException("Error obteniendo las recepciones");
+            }
 
-            //try
-            //{
-            //    var dispatches = _dispatchService.GetDispatches();
-            //    model.Elements = dispatches.Result;
-            //}
-            //catch
-            //{
-            //    throw new RequestErrorException("Error obteniendo las facturas");
-            //}
             return View(model);
         }
 
-        public ActionResult Delivery()
+        public ActionResult FilterArrival(ArrivalFilters filters)
         {
-            return View();
+            try
+            {
+                var arrivals = _arrivalService.GetFilteredArrivals(filters);
+                ViewBag.ArrivalsReport = arrivals.Result.Items;
+            }
+            catch
+            {
+                throw new RequestErrorException("Error obteniendo las recepciones");
+            }
+
+            return View("Arrival", filters);
         }
 
         // Dispatch
@@ -60,14 +69,20 @@ namespace PlataformaWEB.Controllers
         public ActionResult Dispatch()
         {
             var model = new DispatchFilters();
-            ViewBag.DispatchesReport = new List<DispatchReport>();
+            try
+            {
+                var dispatches = _dispatchService.GetFilteredDispatches(model);
+                ViewBag.DispatchesReport = dispatches.Result.Items;
+            }
+            catch
+            {
+                throw new RequestErrorException("Error obteniendo los envíos");
+            }
             return View(model);
         }
 
         public ActionResult FilterDispatch(DispatchFilters filters)
         {
-            var model = new DispatchFilters();
-
             try
             {
                 var dispatches = _dispatchService.GetFilteredDispatches(filters);
@@ -77,7 +92,7 @@ namespace PlataformaWEB.Controllers
             {
                 throw new RequestErrorException("Error obteniendo los envíos");
             }
-            return View("Dispatch",model);
+            return View("Dispatch",filters);
         }
 
         // Invoice 
@@ -85,32 +100,11 @@ namespace PlataformaWEB.Controllers
         [HttpGet]
         public ActionResult Invoice()
         {
-            var model = new InvoiceReport();
-
-            InvoiceReport i1 = new InvoiceReport { Id = "1", InvoiceDate = DateTime.Now, Price = 6, Currency = "Euros" };
-            InvoiceReport i2 = new InvoiceReport { Id = "2", InvoiceDate = DateTime.Now.AddDays(1), Price = 4, Currency = "Euros" };
-            model.Elements = new List<InvoiceReport> { i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2, i1, i2 };
-
-            //try
-            //{
-            //    var invoices = _invoiceService.GetInvoices();
-            //    model.Elements = invoices.Result;
-            //}
-            //catch
-            //{
-            //    throw new RequestErrorException("Error obteniendo las facturas");
-            //}
-            return View(model);
-        }
-
-        public ActionResult FilterInvoice(InvoiceReport invoiceReport)
-        {
-            var model = new InvoiceReport();
-
+            var model = new InvoiceFilters();
             try
             {
-                var invoices = _invoiceService.GetFilteredInvoices(invoiceReport.DateFilters);
-                model.Elements = invoices.Result;
+                var invoices = _invoiceService.GetFilteredInvoices(model);
+                ViewBag.InvoicesReport = invoices.Result.Items;
             }
             catch
             {
@@ -119,7 +113,26 @@ namespace PlataformaWEB.Controllers
             return View(model);
         }
 
+        public ActionResult FilterInvoice(InvoiceFilters filters)
+        {
+            try
+            {
+                var invoices = _invoiceService.GetFilteredInvoices(filters);
+                ViewBag.InvoicesReport = invoices.Result.Items;
+            }
+            catch
+            {
+                throw new RequestErrorException("Error obteniendo las facturas");
+            }
+            return View("Invoice",filters);
+        }
+
         public ActionResult Order()
+        {
+            return View();
+        }
+
+        public ActionResult Delivery()
         {
             return View();
         }
@@ -129,9 +142,36 @@ namespace PlataformaWEB.Controllers
             return View();
         }
 
+        // Serials
+        [Route("~/ReportsController/Serial")]
+        [HttpGet]
         public ActionResult Serial()
         {
-            return View();
+            var model = new SerialFilters();
+            try
+            {
+                var serials = _serialService.GetFilteredSerials(model);
+                ViewBag.SerialsReport = serials.Result.Items;
+            }
+            catch
+            {
+                throw new RequestErrorException("Error obteniendo los seriales");
+            }
+            return View(model);
+        }
+
+        public ActionResult FilterSerial(SerialFilters filters)
+        {
+            try
+            {
+                var serials = _serialService.GetFilteredSerials(filters);
+                ViewBag.SerialsReport = serials.Result.Items;
+            }
+            catch
+            {
+                throw new RequestErrorException("Error obteniendo los seriales");
+            }
+            return View("Serial", filters);
         }
     }
 }

@@ -25,6 +25,6 @@ namespace PlataformaWEB.Dto
 
         public string Serial { get; set; }
 
-        public DateTime ActiveFrom { get; set; }
+        public DateTimeOffset ActiveFrom { get; set; }
     }
 }

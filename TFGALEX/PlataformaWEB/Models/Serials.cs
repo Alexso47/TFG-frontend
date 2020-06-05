@@ -10,5 +10,6 @@ namespace PlataformaWEB.Models
         public int Id { get; set; }
 
         public string Serial { get; set; }
+
     }
 }

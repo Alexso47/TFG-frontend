@@ -26,6 +26,8 @@ namespace PlataformaWEB.Extensions
             services.AddHttpClient<IInvoiceService, InvoiceService>();
             
             services.AddHttpClient<IDispatchService, DispatchService>();
+           
+            services.AddHttpClient<ISerialService, SerialService>();
 
             return services;
         }

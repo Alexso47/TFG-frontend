@@ -20,6 +20,6 @@ table {
     overflow-x:scroll;
 }
 
-table th {
-    min-width:65px;
-}
+    table th, table tr td {
+        min-width: 140px;
+    }

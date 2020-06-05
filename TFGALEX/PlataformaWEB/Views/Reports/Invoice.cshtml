@@ -1,4 +1,4 @@
-@model InvoiceReport
+@model InvoiceFilters
 
 @{
     ViewData["Title"] = "Informe de Facturas";
@@ -17,17 +17,43 @@
 <div class="row">
     <form class="form-x" asp-controller="Reports" asp-action="FilterInvoice" method="post" enctype="multipart/form-data">
         <div class="row" id="content_data">
-            <label class="col-2 control-label">Fecha de facturación desde</label>
+            <label class="col-2 control-label">Fecha de factura desde</label>
             <div class="col-3 demo-section k-content" id="ppp">
                 <div id="dtpickerSelect">
-                    <input type="date" value="" asp-for="DateFilters.From" />
+                    <input type="date"  asp-for="From" />
                 </div>
             </div>
-            <label class="col-2 control-label">Fecha de facturación hasta</label>
+            <label class="col-2 control-label">Fecha de factura hasta</label>
             <div class="col-3 demo-section k-content" id="ppp">
                 <div id="dtpickerSelect">
-                    <input type="date" value="" asp-for="DateFilters.To" />
+                    <input type="date"  asp-for="To" />
                 </div>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Id de factura</label>
+            <div class="col-5">
+                <input placeholder="Id" class="form-control" type="text" asp-for="Id" />
+            </div>
+            <label class="col-2 control-label">Comprador en EU</label>
+            <div class="col-1">
+                <input type="checkbox" checked="checked" asp-for="BuyerEU" />
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Facility comprador</label>
+            <div class="col-3">
+                <input placeholder="Facility" class="form-control" type="text" asp-for="BuyerID" />
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Precio factura</label>
+            <div class="col-2">
+                <input placeholder="Precio" class="form-control" type="number" asp-for="Price" />
+            </div>
+            <label class="col-1 control-label">Moneda</label>
+            <div class="col-2">
+                <input placeholder="Moneda" class="form-control" type="text" asp-for="Currency" />
             </div>
         </div>
         <div class="row" id="content_data" style="margin-top:20px;">
@@ -71,11 +97,11 @@
 
             </th>
             <th class="th-sm">
-                ID comprador
+                FID comprador
 
             </th>
             <th class="th-sm">
-                Nombre
+                Nombre del comprador
 
             </th>
             <th class="th-sm">
@@ -94,30 +120,63 @@
                 CP
 
             </th>
+            <th class="th-sm">
+                Seriales
+
+            </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var element in Model.Elements)
+        @foreach (var element in ViewBag.InvoicesReport)
         {
             <tr>
                 <td>@element.Id</td>
-                <td>@element.InvoiceDate</td>
+                <td>@element.InvoiceDate.ToString("dd/MM/yyyy")</td>
                 <td>@element.Price</td>
                 <td>@element.Currency</td>
-                <td>@element.BuyerEU</td>
+                @if (element.BuyerEU == true)
+                {
+                    <td>Si</td>
+                }
+                else
+                {
+                    <td>No</td>
+                }
                 <td>@element.BuyerID</td>
                 <td>@element.BuyerName</td>
                 <td>@element.BuyerCountry</td>
                 <td>@element.BuyerCity</td>
                 <td>@element.BuyerAddress</td>
                 <td>@element.BuyerZipCode</td>
-                @*<td>button para los seriales</td>*@
+                <td>
+                    @foreach (var serial in element.Serials)
+                    {
+                        <div id="ids">Id : @serial.Id </div>
+                        <div id="idsserial">Serial : @serial.Serial </div>
+                    }
+                </td>
             </tr>
         }
     </tbody>
 </table>
 
 <style>
+    #ids, #idsserial {
+        width: 200px;
+        text-align: center;
+    }
+
+    #ids {
+        border-top: 3px solid lightgrey;
+        border-left: 3px solid lightgrey;
+        border-right: 3px solid lightgrey;
+    }
+
+    #idsserial {
+        border-left: 3px solid lightgrey;
+        border-right: 3px solid lightgrey;
+        border-bottom: 3px solid lightgrey;
+    }
 
     input {
         font-size:20px;

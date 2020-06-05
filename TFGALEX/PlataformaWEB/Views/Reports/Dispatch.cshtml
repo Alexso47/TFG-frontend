@@ -20,13 +20,13 @@
             <label class="col-2 control-label">Fecha de envío desde</label>
             <div class="col-3 demo-section k-content" id="ppp">
                 <div id="dtpickerSelect">
-                    <input type="date" value="" asp-for="From" />
+                    <input type="date" asp-for="From" />
                 </div>
             </div>
             <label class="col-2 control-label">Fecha de envío hasta</label>
             <div class="col-3 demo-section k-content" id="ppp">
                 <div id="dtpickerSelect">
-                    <input type="date" value="" asp-for="To" />
+                    <input type="date" asp-for="To" />
                 </div>
             </div>
         </div>
@@ -152,13 +152,35 @@
                 <td>@element.DestinationZipCode</td>
                 <td>@element.TransportMode</td>
                 <td>@element.Vehicle</td>
-                <td>@element.SerialsJson</td>
+                <td>
+                    @foreach (var serial in element.Serials)
+                    {
+                        <div id="ids">Id : @serial.Id </div>
+                        <div id="idsserial">Serial : @serial.Serial </div>
+                    }
+                </td>
             </tr>
         }
     </tbody>
 </table>
 
 <style>
+    #ids, #idsserial {
+        width: 200px;
+        text-align: center;
+    }
+
+    #ids {
+        border-top: 3px solid lightgrey;
+        border-left: 3px solid lightgrey;
+        border-right: 3px solid lightgrey;
+    }
+
+    #idsserial {
+        border-left: 3px solid lightgrey;
+        border-right: 3px solid lightgrey;
+        border-bottom: 3px solid lightgrey;
+    }
 
     input {
         font-size: 20px;

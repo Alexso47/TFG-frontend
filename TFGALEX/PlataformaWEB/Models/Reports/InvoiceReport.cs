@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace PlataformaWEB.Models
 {
     public class InvoiceReport
-    { 
-        public string Id { get; set; }
+    {
+        public int Id { get; set; }
 
-        public DateTime InvoiceDate { get; set; }
+        public DateTimeOffset InvoiceDate { get; set; }
 
         public float Price { get; set; }
 
@@ -24,14 +24,14 @@ namespace PlataformaWEB.Models
 
         public string BuyerCountry { get; set; }
 
-        public string BuyerAddress { get; set; }
-
         public string BuyerCity { get; set; }
+
+        public string BuyerAddress { get; set; }
 
         public string BuyerZipCode { get; set; }
 
-        public List<InvoiceReport> Elements { get; set; }
+        public List<Serials> Serials { get; set; }
 
-        public DateFilters DateFilters { get; set; }
+        public string SerialsJson { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace PlataformaWEB.Models
 
         [Required]
         [Display(Name = "Número de factura")]
-        public DateTime InvoiceDate { get; set; }
+        public DateTimeOffset InvoiceDate { get; set; }
 
         [Required]
         [Display(Name = "Número de factura")]

@@ -12,7 +12,7 @@ namespace PlataformaWEB.Models
 
         public string FID { get; set; }
 
-        public DateTime DispatchDate { get; set; }
+        public DateTimeOffset DispatchDate { get; set; }
 
         public bool DestinationEU { get; set; }
 

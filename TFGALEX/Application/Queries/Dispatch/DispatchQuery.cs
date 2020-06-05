@@ -8,7 +8,7 @@ namespace Application.Queries.Dispatch
 {
     public class DispatchQuery : IRequest<PaginatedList<DispatchResult>>
     {
-        public DispatchQuery(DateTime? dateFrom, DateTime? dateTo, int id, string fid, string destinationFID, string transportMode, string vehicle, bool? destinationEU)
+        public DispatchQuery(DateTimeOffset? dateFrom, DateTimeOffset? dateTo, int id, string fid, string destinationFID, string transportMode, string vehicle, bool? destinationEU)
         {
             DateFrom = dateFrom;
             DateTo = dateTo;
@@ -20,9 +20,9 @@ namespace Application.Queries.Dispatch
             DestinationEU = destinationEU;
         }
 
-        public DateTime? DateFrom { get; set; }
+        public DateTimeOffset? DateFrom { get; set; }
 
-        public DateTime? DateTo { get; set; }
+        public DateTimeOffset? DateTo { get; set; }
 
         public int? Id { get; set; }
 

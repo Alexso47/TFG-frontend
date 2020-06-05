@@ -23,7 +23,7 @@ namespace PlataformaWEB.Services
         public ArrivalService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "http://localhost:5001/";
+            _remoteServiceBaseUrl = "http://localhost:5001/api/arrival";
         }
 
         async public Task<string> Register(Arrival arrival)
@@ -37,7 +37,7 @@ namespace PlataformaWEB.Services
                 Reference = new Arrival2FacilityReference()
                 {
                     FacilityID = arrival.Facility,
-                    EventTime = DateTime.UtcNow
+                    EventTime = DateTimeOffset.UtcNow
                 },
                 Comments = arrival.Comments,
                 Serials = arrival.SerialList
@@ -55,6 +55,36 @@ namespace PlataformaWEB.Services
             response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<string>(responseString);
+        }
+
+        public async Task<PaginatedList<ArrivalReport>> GetArrivals()
+        {
+            var uri = API.Arrival.GetArrivals(_remoteServiceBaseUrl);
+            var response = await _httpClient.GetAsync(uri);
+            if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+            {
+                throw new Exception("Error obteniendo los envíos");
+            }
+
+            response.EnsureSuccessStatusCode();
+            var jsonResult = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<PaginatedList<ArrivalReport>>(jsonResult);
+            return result;
+        }
+
+        public async Task<PaginatedList<ArrivalReport>> GetFilteredArrivals(ArrivalFilters filters)
+        {
+            var uri = API.Arrival.GetFilteredArrivals(_remoteServiceBaseUrl, filters);
+            var response = await _httpClient.GetAsync(uri);
+            if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+            {
+                throw new Exception("Error obteniendo los envíos");
+            }
+
+            response.EnsureSuccessStatusCode();
+            var jsonResult = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<PaginatedList<ArrivalReport>>(jsonResult);
+            return result;
         }
     }
 }

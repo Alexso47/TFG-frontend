@@ -25,6 +25,6 @@ namespace PlataformaWEB.Dto
 
         public string Country { get; set; }
 
-        public DateTime ActiveFrom { get; set; }
+        public DateTimeOffset ActiveFrom { get; set; }
     }
 }

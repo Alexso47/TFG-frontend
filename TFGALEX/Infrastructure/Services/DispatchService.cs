@@ -85,14 +85,14 @@ namespace Infrastructure.Services
 
             if (filter.DispatchDateFrom != null)
             {
-                dateConverted = filter.DispatchDateFrom?.ToString("yyyy -MM-ddTHH:mm:ssZ");
-                filterStr += $" AND D.DispatchDate > '{dateConverted}'";
+                dateConverted = filter.DispatchDateFrom?.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                filterStr += $" AND D.DispatchDate >= '{dateConverted}'";
             }
 
             if (filter.DispatchDateTo != null)
             {
                 dateConverted = filter.DispatchDateTo?.ToString("yyyy-MM-ddTHH:mm:ssZ");
-                filterStr += $" AND D.DispatchDate < '{dateConverted}'";
+                filterStr += $" AND D.DispatchDate <= '{dateConverted}'";
             }
 
             if (filter.Id != 0)

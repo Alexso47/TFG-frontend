@@ -27,7 +27,7 @@ namespace Application.Queries.Dispatch
             var filter = GetFilter(request);
             var dispatches = await _dispatchService.GetDispatches(filter);
             int total = await _dispatchService.GetTotalDispatches(filter);
-            PaginatedList<DispatchResult> result = createResultResponse(request, dispatches);
+            PaginatedList<DispatchResult> result = CreateResultResponse(request, dispatches);
             result.Total = total;
             return result;
         }
@@ -47,7 +47,7 @@ namespace Application.Queries.Dispatch
             };
         }
 
-        private PaginatedList<DispatchResult> createResultResponse(DispatchQuery request, List<Dispatches> result)
+        private PaginatedList<DispatchResult> CreateResultResponse(DispatchQuery request, List<Dispatches> result)
         {
             var dispatchesResult = new List<DispatchResult>();
             var filteredList = result;

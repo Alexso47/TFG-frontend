@@ -22,6 +22,6 @@ namespace Domain
 
         public string ZipCode { get; set; }
 
-        public DateTime ActiveFrom { get; set; }
+        public DateTimeOffset ActiveFrom { get; set; }
     }
 }

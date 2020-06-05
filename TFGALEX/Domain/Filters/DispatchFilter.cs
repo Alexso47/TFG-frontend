@@ -10,9 +10,9 @@ namespace Domain.Filters
 
         public string FID { get; set; }
 
-        public DateTime? DispatchDateFrom { get; set; }
+        public DateTimeOffset? DispatchDateFrom { get; set; }
 
-        public DateTime? DispatchDateTo { get; set; }
+        public DateTimeOffset? DispatchDateTo { get; set; }
 
         public bool? DestinationEU { get; set; }
 

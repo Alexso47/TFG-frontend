@@ -9,7 +9,7 @@ namespace PlataformaWEB.Dto
     {
         public string Id { get; set; }
 
-        public DateTime InvoiceDate { get; set; }
+        public DateTimeOffset InvoiceDate { get; set; }
 
         public float Price { get; set; }
 

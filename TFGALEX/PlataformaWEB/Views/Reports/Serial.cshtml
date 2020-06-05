@@ -1,6 +1,7 @@
+@model SerialFilters
 
 @{
-    ViewData["Title"] = "Serial";
+    ViewData["Title"] = "Informe de Seriales";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,48 +14,111 @@
 
 <script src="~/js/Tables.js"></script>
 
+<div class="row">
+    <form class="form-x" asp-controller="Reports" asp-action="FilterSerial" method="post" enctype="multipart/form-data">
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Serial</label>
+            <div class="col-7">
+                <input placeholder="Serial" class="form-control" type="text" asp-for="Serial" />
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Id </label>
+            <div class="col-2">
+                <input placeholder="Id" class="form-control" type="number" asp-for="Id" />
+            </div>
+        </div>
+        <div class="row" id="content_data" style="margin-top:20px;">
+            <div class="col-10" style="text-align:right">
+                <button type="button" id="button-cancel-filters" class="btn btn-default" onclick="javascript:window.location.reload(false);">
+                    Cancelar
+                </button>
+            </div>
+            <div class="col-2" style="text-align:right">
+                <button class="btn btn-primary" id="button-apply-filters" type="submit">
+                    Aplicar filtros
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="sep"></div>
 
 <table id="dataTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="margin-top:100px;">
     <thead>
         <tr>
             <th class="th-sm">
-                Name
+                Id
 
             </th>
             <th class="th-sm">
-                Position
+                Serial
 
             </th>
             <th class="th-sm">
-                Office
+                IDs Recepciones
 
             </th>
             <th class="th-sm">
-                Age
+                IDs Envios
 
             </th>
             <th class="th-sm">
-                Start date
+                IDs Facturas
 
             </th>
             <th class="th-sm">
-                Salary
+                IDs Requests
 
             </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var element in Model.Elements)
+        @foreach (var element in ViewBag.SerialsReport)
         {
             <tr>
                 <td>@element.Id</td>
-                <td>@element.Currency</td>
-                <td>@element.Currency</td>
-                <td>@element.Price</td>
-                <td>@element.InvoiceDate</td>
-                <td>@element.Price</td>
+                <td>@element.Serial</td>
+                <td>
+                @foreach (var arrival in element.ArrivalSerials)
+                {   
+                    <div id="ids">Recepcion - @arrival.ArrivalID </div>
+                }
+                </td>
+                <td>
+                @foreach (var arrival in element.DispatchSerials)
+                {   
+                    <div id="ids">Envio - @arrival.DispatchID </div>
+                }
+                </td>
+                <td>
+                @foreach (var arrival in element.InvoiceSerials)
+                {   
+                    <div id="ids">Factura - @arrival.InvoiceID </div>
+                }
+                </td>
+                <td>
+                @foreach (var arrival in element.RequestSerials)
+                {   
+                    <div id="ids">Request - @arrival.RequestID </div>
+                }
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+<style>
+    #ids {
+        border-bottom:5px solid white;
+        width:100%;
+        text-align:center;
+        background-color:#e2e2e2;
+    }
+
+    input {
+        font-size: 20px;
+    }
+</style>
 

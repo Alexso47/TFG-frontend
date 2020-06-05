@@ -24,7 +24,7 @@ namespace PlataformaWEB.Services
         public InvoiceService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "http://localhost:5001/api/administration/invoice";
+            _remoteServiceBaseUrl = "http://localhost:5001/api/invoice";
         }
 
         async public Task<string> Register(Invoice invoice)
@@ -44,7 +44,7 @@ namespace PlataformaWEB.Services
             return JsonConvert.DeserializeObject<string>(responseString);
         }
 
-        public async Task<List<InvoiceReport>> GetInvoices()
+        public async Task<PaginatedList<InvoiceReport>> GetInvoices()
         {
             var uri = API.Invoice.GetInvoices(_remoteServiceBaseUrl);
             var response = await _httpClient.GetAsync(uri);
@@ -55,12 +55,12 @@ namespace PlataformaWEB.Services
 
             response.EnsureSuccessStatusCode();
             var jsonResult = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<List<InvoiceReport>>(jsonResult);
+            var result = JsonConvert.DeserializeObject<PaginatedList<InvoiceReport>>(jsonResult);
             return result;
         }
 
         
-        public async Task<List<InvoiceReport>> GetFilteredInvoices(DateFilters filters)
+        public async Task<PaginatedList<InvoiceReport>> GetFilteredInvoices(InvoiceFilters filters)
         {
             var uri = API.Invoice.GetFilteredInvoices(_remoteServiceBaseUrl, filters);
             var response = await _httpClient.GetAsync(uri);
@@ -71,7 +71,7 @@ namespace PlataformaWEB.Services
 
             response.EnsureSuccessStatusCode();
             var jsonResult = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<List<InvoiceReport>>(jsonResult);
+            var result = JsonConvert.DeserializeObject<PaginatedList<InvoiceReport>>(jsonResult);
             return result;
         }
 
@@ -90,8 +90,8 @@ namespace PlataformaWEB.Services
             invoiceReference.BuyerZipCode = invoice.BuyerZipCode;
 
             RequestHeader requestHeader = new RequestHeader();
-            requestHeader.DateRequest = DateTime.UtcNow.ToString("yyyyMMdd");
-            requestHeader.TimeRequest = DateTime.UtcNow.ToString("hhmmss");
+            requestHeader.DateRequest = DateTimeOffset.UtcNow.ToString("yyyyMMdd");
+            requestHeader.TimeRequest = DateTimeOffset.UtcNow.ToString("hhmmss");
             requestHeader.RequestId = Guid.NewGuid().ToString();
 
             return new InvoiceRequestDto()

@@ -71,7 +71,7 @@ namespace PlataformaWEB.Controllers
                     ZipCode = "08181",
                     Country = "España",
                     City = "Sentmenat",
-                    ActiveFrom = DateTime.Now.AddDays(-1)
+                    ActiveFrom = DateTimeOffset.Now.AddDays(-1)
                 };
 
                 return Json(new { status = "OK", data = model });
@@ -166,7 +166,7 @@ namespace PlataformaWEB.Controllers
                     ZipCode = "08181",
                     Country = "España",
                     City = "Sentmenat",
-                    ActiveFrom = DateTime.Now.AddDays(-1)
+                    ActiveFrom = DateTimeOffset.Now.AddDays(-1)
                 };
 
                 return Json(new { status = "OK", data = model });
@@ -262,7 +262,7 @@ namespace PlataformaWEB.Controllers
                     Description = "Prueba 1 sin acceder a la API",
                     Producer = "CocaCola",
                     Serial = "coke19520eo1f1asdloki",
-                    ActiveFrom = DateTime.Now.AddDays(-1)
+                    ActiveFrom = DateTimeOffset.Now.AddDays(-1)
                 };
 
                 return Json(new { status = "OK", data = model });

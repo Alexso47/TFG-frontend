@@ -18,7 +18,7 @@ namespace Domain
 
         public string Producer { get; set; }
 
-        public DateTime ActiveFrom { get; set; }
+        public DateTimeOffset ActiveFrom { get; set; }
 
         public string Serial { get; set; }
     }

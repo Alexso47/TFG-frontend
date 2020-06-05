@@ -7,8 +7,8 @@ namespace PlataformaWEB.Models.Reports
 {
     public class DateFilters
     {
-        public DateTime? From { get; set; }
+        public DateTimeOffset? From { get; set; }
 
-        public DateTime? To { get; set; }
+        public DateTimeOffset? To { get; set; }
     }
 }

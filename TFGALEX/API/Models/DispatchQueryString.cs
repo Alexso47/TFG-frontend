@@ -7,9 +7,9 @@ namespace API.Models
 {
     public class DispatchQueryString
     {
-        public DateTime? CreationDateFrom { get; set; }
+        public DateTimeOffset? CreationDateFrom { get; set; }
 
-        public DateTime? CreationDateTo { get; set; }
+        public DateTimeOffset? CreationDateTo { get; set; }
 
         public int? Id { get; set; }
 

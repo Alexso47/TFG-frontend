@@ -42,6 +42,6 @@ namespace PlataformaWEB.Models
 
         [Required]
         [Display(Name = "ActiveFrom")]
-        public DateTime ActiveFrom { get; set; }
+        public DateTimeOffset ActiveFrom { get; set; }
     }
 }

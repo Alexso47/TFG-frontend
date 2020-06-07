@@ -5546,11 +5546,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFG-frontend\\TFG-frontend\\PlataformaWEB\\PlataformaWEB.csproj",
+      "projectUniqueName": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\GitHub\\FrontEnd\\TFG-frontend\\PlataformaWEB\\PlataformaWEB.csproj",
       "projectName": "PlataformaWEB",
-      "projectPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFG-frontend\\TFG-frontend\\PlataformaWEB\\PlataformaWEB.csproj",
+      "projectPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\GitHub\\FrontEnd\\TFG-frontend\\PlataformaWEB\\PlataformaWEB.csproj",
       "packagesPath": "X:\\Usuarios\\aleko\\.nuget\\packages\\",
-      "outputPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFG-frontend\\TFG-frontend\\PlataformaWEB\\obj\\",
+      "outputPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\GitHub\\FrontEnd\\TFG-frontend\\PlataformaWEB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

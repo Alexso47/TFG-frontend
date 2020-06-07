@@ -23,7 +23,7 @@ namespace PlataformaWEB.Services
         public ArrivalService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "http://localhost:5001/api/arrival";
+            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/arrival";
         }
 
         async public Task<string> Register(Arrival arrival)

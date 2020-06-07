@@ -99,5 +99,51 @@ namespace Infrastructure.Services
 
             return filterStr;
         }
+
+        public async Task<int> GetLastIdSerial()
+        {
+            DbConnection connection = GetConnection();
+
+            string sql = @" SELECT MAX(S.Id) AS Id FROM Serials AS S";
+
+            var result = connection.Query<int>(sql).ToList();
+
+            var lastId = result.Any() ? result.FirstOrDefault() : 0;
+
+            connection.Close();
+            return lastId;
+        }
+
+        public async Task<Serials> GetSerialBySerial(string serial)
+        {
+            DbConnection connection = GetConnection();
+
+            string sql = @" SELECT S.Id AS Id 
+                            FROM Serials AS S
+                            WHERE S.Serial = '" + serial + "'";
+
+            var result = connection.Query<Serials>(sql);
+
+            var serialResult = result.Any() ? result.FirstOrDefault() : null;
+
+            connection.Close();
+            return serialResult;
+        }
+
+        public async Task<Serials> GetSerialById(int id)
+        {
+            DbConnection connection = GetConnection();
+
+            string sql = @" SELECT S.Id AS Id 
+                            FROM Serials AS S
+                            WHERE S.Id = '" + id + "'";
+
+            var result = connection.Query<Serials>(sql);
+
+            var serialResult = result.Any() ? result.FirstOrDefault() : null;
+
+            connection.Close();
+            return serialResult;
+        }
     }
 }

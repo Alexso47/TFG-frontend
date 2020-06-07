@@ -1347,6 +1347,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "API.dto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/API.dto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/API.dto.dll": {}
+        }
+      },
       "Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5223,6 +5236,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "API.dto/1.0.0": {
+      "type": "project",
+      "path": "../API.dto/API.dto.csproj",
+      "msbuildProject": "../API.dto/API.dto.csproj"
+    },
     "Application/1.0.0": {
       "type": "project",
       "path": "../Application/Application.csproj",
@@ -5241,6 +5259,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "API.dto >= 1.0.0",
       "Application >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "MediatR >= 8.0.1",
@@ -5279,6 +5298,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\API.dto\\API.dto.csproj": {
+              "projectPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\API.dto\\API.dto.csproj"
+            },
             "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Application\\Application.csproj": {
               "projectPath": "X:\\Usuarios\\aleko\\Documents\\Uni\\2\\TFG\\TFGGit\\TFGALEX\\Application\\Application.csproj"
             },

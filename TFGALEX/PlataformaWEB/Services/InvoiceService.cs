@@ -6,6 +6,7 @@ using PlataformaWEB.Dto;
 using PlataformaWEB.Exceptions;
 using PlataformaWEB.Infrastructure;
 using PlataformaWEB.Models;
+using PlataformaWEB.Models.PostRequests.Invoice;
 using PlataformaWEB.Models.Reports;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace PlataformaWEB.Services
             _remoteServiceBaseUrl = "http://localhost:5001/api/invoice";
         }
 
-        async public Task<string> Register(Invoice invoice)
+        async public Task<InvoiceResponse> Register(Invoice invoice)
         {
             var uri = API.Invoice.RegisterInvoice(_remoteServiceBaseUrl);
             var invoiceDto = InvoiceRequestViewModelToDto(invoice);
@@ -39,9 +40,20 @@ namespace PlataformaWEB.Services
             {
                 throw new Exception("Error creando la factura");
             }
-            response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<string>(responseString);
+            var result = JsonConvert.DeserializeObject<InvoiceResponse>(responseString);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+
+                return result;
+            }
+            catch
+            {
+                return result;
+            }
+            
         }
 
         public async Task<PaginatedList<InvoiceReport>> GetInvoices()
@@ -77,18 +89,6 @@ namespace PlataformaWEB.Services
 
         private InvoiceRequestDto InvoiceRequestViewModelToDto(Invoice invoice)
         {
-            InvoiceReferenceRequestDto invoiceReference = new InvoiceReferenceRequestDto();
-            invoiceReference.Id = invoice.Id;
-            invoiceReference.InvoiceDate = invoice.InvoiceDate;
-            invoiceReference.Price = invoice.Price;
-            invoiceReference.Currency = invoice.Currency;
-            invoiceReference.BuyerEU = invoice.BuyerEU;
-            invoiceReference.BuyerName = invoice.BuyerName;
-            invoiceReference.BuyerCity = invoice.BuyerCity;
-            invoiceReference.BuyerCountry = invoice.BuyerCountry;
-            invoiceReference.BuyerAddress = invoice.BuyerAddress;
-            invoiceReference.BuyerZipCode = invoice.BuyerZipCode;
-
             RequestHeader requestHeader = new RequestHeader();
             requestHeader.DateRequest = DateTimeOffset.UtcNow.ToString("yyyyMMdd");
             requestHeader.TimeRequest = DateTimeOffset.UtcNow.ToString("hhmmss");
@@ -96,9 +96,18 @@ namespace PlataformaWEB.Services
 
             return new InvoiceRequestDto()
             {
-                RequestHeader = requestHeader,
-                Invoice = invoiceReference,
                 Id = invoice.Id,
+                InvoiceDate = invoice.InvoiceDate,
+                Price = invoice.Price,
+                Currency = invoice.Currency,
+                BuyerID = invoice.BuyerID,
+                BuyerEU = invoice.BuyerEU ?  (byte) 1: (byte) 0,
+                BuyerName = invoice.BuyerName,
+                BuyerCity = invoice.BuyerCity,
+                BuyerCountry = invoice.BuyerCountry,
+                BuyerAddress = invoice.BuyerAddress,
+                BuyerZipCode = invoice.BuyerZipCode,
+                RequestHeader = requestHeader,
                 Serials = invoice.SerialList
             };
         }

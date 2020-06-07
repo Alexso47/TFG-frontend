@@ -14,15 +14,15 @@ namespace PlataformaWEB.Models
         public string Id { get; set; }
 
         [Required]
-        [Display(Name = "Número de factura")]
+        [Display(Name = "Fecha de factura")]
         public DateTimeOffset InvoiceDate { get; set; }
 
         [Required]
-        [Display(Name = "Número de factura")]
+        [Display(Name = "Precio de factura")]
         public float Price { get; set; }
 
         [Required]
-        [Display(Name = "Número de factura")]
+        [Display(Name = "Moneda de factura")]
         public string Currency { get; set; }
 
         public bool BuyerEU { get; set; }

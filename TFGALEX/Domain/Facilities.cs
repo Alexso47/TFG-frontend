@@ -8,7 +8,7 @@ namespace Domain
     {
         public string Id { get; set; }
 
-        public string EIOD { get; set; }
+        public string EOID { get; set; }
 
         public string Name { get; set; }
 

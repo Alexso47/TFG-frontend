@@ -1,5 +1,6 @@
 ﻿using Domain;
 using Infrastructure.Services;
+using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -26,11 +27,14 @@ namespace API
             services.AddTransient<IInvoiceService, InvoiceService>();
             services.AddTransient<IArrivalService, ArrivalService>();
             services.AddTransient<ISerialService, SerialService>();
+            services.AddTransient<IFacilityService, FacilityService>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
         {
-            //services.AddTransient<IClientRepository, ClientRepository>();
+            services.AddTransient<IFacilitiesRepository, FacilitiesRepository>();
+            services.AddTransient<ISerialsRepository, SerialsRepository>();
+            services.AddTransient<IInvoicesRepository, InvoicesRepository>();
         }
     }
 }

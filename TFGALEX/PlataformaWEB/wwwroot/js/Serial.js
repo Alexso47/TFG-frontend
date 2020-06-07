@@ -14,7 +14,7 @@ function removeSerial() {
 
 function AddSerialToList() {
     var serial = $("#serialToAdd").val();
-    if (serial.length > 9) {
+    if (serial.length > 0) {
         var listSerials = $("#txthdnSerials").val();
         if (listSerials.indexOf(serial) < 0) {
             listSerials += listSerials == "" ? serial : "/n" + serial;

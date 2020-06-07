@@ -15,7 +15,7 @@ namespace PlataformaWEB.Dto
 
         public string Currency { get; set; }
 
-        public bool BuyerEU { get; set; }
+        public byte BuyerEU { get; set; }
 
         public string BuyerID { get; set; }
 

@@ -192,7 +192,7 @@ namespace PlataformaWEB.Infrastructure
         {
             public static string RegisterInvoice(string baseUri)
             {
-                return $"{baseUri}";
+                return $"{baseUri}/Create";
             }
 
             public static string GetInvoices(string baseUri)

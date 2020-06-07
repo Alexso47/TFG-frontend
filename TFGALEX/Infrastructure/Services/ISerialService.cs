@@ -12,5 +12,11 @@ namespace Infrastructure.Services
         Task<List<Serials>> GetSerials(SerialFilter filter);
 
         Task<int> GetTotalSerials(SerialFilter filter);
+
+        Task<int> GetLastIdSerial();
+
+        Task<Serials> GetSerialBySerial(string newSerial);
+
+        Task<Serials> GetSerialById(int id);
     }
 }

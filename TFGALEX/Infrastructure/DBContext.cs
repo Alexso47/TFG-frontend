@@ -16,13 +16,13 @@ namespace Infrastructure
         public DbSet<DispatchSerials> DispatchSerials { get; set; }
         public DbSet<EconomicOperators> EconomicOperators { get; set; }
         public DbSet<Facilities> Facilities { get; set; }
-        public DbSet<Invoices> Invoices { get; set; }
+        public DbSet<InvoicesDB> Invoices { get; set; }
         public DbSet<InvoiceSerials> InvoiceSerials { get; set; }
         public DbSet<Machines> Machines { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<Requests> Requests { get; set; }
         public DbSet<RequestSerials> RequestSerials { get; set; }
-        public DbSet<Serials> Serials { get; set; }
+        public DbSet<SerialsDB> Serials { get; set; }
 
         public DBContext(DbContextOptions<DBContext> options)
          : base(options)

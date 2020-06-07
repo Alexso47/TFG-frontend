@@ -61,3 +61,5 @@ X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\Api\bin\Debug\netcoreapp3.1
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\Api\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\Api\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
 X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\Api\bin\Debug\netcoreapp3.1\API.dto.dll
+X:\Usuarios\aleko\Documents\Uni\2\TFG\TFGGit\TFGALEX\Api\bin\Debug\netcoreapp3.1\API.dto.pdb

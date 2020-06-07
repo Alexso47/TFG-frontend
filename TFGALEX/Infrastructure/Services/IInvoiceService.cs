@@ -12,5 +12,13 @@ namespace Infrastructure.Services
         Task<List<Invoices>> GetInvoices(InvoiceFilter filter);
 
         Task<int> GetTotalInvoices(InvoiceFilter filter);
+
+        Task<Invoices> GetInvoiceById(int id);
+
+        Task<int> GetLastIdInvoice();
+
+        Task<int> GetLastIdInvoiceSerials();
+
+        Task<int> UpdateInvoiceSerialsTable(InvoiceSerials item);
     }
 }

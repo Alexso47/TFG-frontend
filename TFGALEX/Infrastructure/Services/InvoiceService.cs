@@ -125,5 +125,62 @@ namespace Infrastructure.Services
 
             return filterStr;
         }
+
+        public async Task<Invoices> GetInvoiceById(int id)
+        {
+            DbConnection connection = GetConnection();
+
+            string sql = @" SELECT I.Id AS Id 
+                            FROM Invoices AS I
+                            WHERE I.Id = '" + id + "'";
+
+            var result = connection.Query<Invoices>(sql);
+
+            var invoiceResult = result.Any() ? result.FirstOrDefault() : null;
+
+            connection.Close();
+            return invoiceResult;
+        }
+
+        public async Task<int> GetLastIdInvoice()
+        {
+            DbConnection connection = GetConnection();
+
+            string sql = @" SELECT MAX(I.Id) AS Id FROM Invoices AS I";
+
+            var result = connection.Query<int>(sql).ToList();
+
+            var lastId = result.Any() ? result.FirstOrDefault() : 0;
+
+            connection.Close();
+            return lastId;
+        }
+
+        public async Task<int> GetLastIdInvoiceSerials()
+        {
+            DbConnection connection = GetConnection();
+
+            string sql = @" SELECT MAX(I.Id) AS Id FROM InvoiceSerials AS I";
+
+            var result = connection.Query<int>(sql).ToList();
+
+            var lastId = result.Any() ? result.FirstOrDefault() : 0;
+
+            connection.Close();
+            return lastId;
+        }
+
+        public async Task<int> UpdateInvoiceSerialsTable(InvoiceSerials item)
+        {
+            DbConnection connection = GetConnection();
+
+            string insertQuery = @"INSERT INTO [dbo].[InvoiceSerials]([Id], [Serial], [InvoiceID]) VALUES (" + 
+                item.Id + ", '" + item.Serial + "', " + item.InvoiceID +")";
+
+            var result = connection.Execute(insertQuery);
+
+            connection.Close();
+            return result;
+        }
     }
 }

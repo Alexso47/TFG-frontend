@@ -68,7 +68,7 @@ namespace PlataformaWEB.Controllers
                 {
                     ViewBag.Serials = arrival.SerialList;
                     ViewBag.JsonSerials = JsonConvert.SerializeObject(arrival.SerialList);
-                    ViewBag.Status = result;
+                    ViewBag.Status = "No registrado";
                 }
             }
             catch(Exception ex)
@@ -179,16 +179,18 @@ namespace PlataformaWEB.Controllers
                     invoice.SerialList = invoice.Serials.Split("/n").ToList();
                     var result = await _invoiceService.Register(invoice);
 
-                    if (result == "OK")
+                    if (!result.ResponseResult.Errors.Any())
                     {
+                        ViewBag.Status = "Factura con ID " + invoice.Id + " registrada";
                         invoice = new Invoice();
-                        ViewBag.Status = "Invoice registrado";
                     }
                     else
                     {
+                        ViewBag.Status = result.ResponseResult.Errors.FirstOrDefault().ErrorMessage;
+                        invoice = new Invoice();
                         ViewBag.Serials = invoice.SerialList;
                         ViewBag.JsonSerials = JsonConvert.SerializeObject(invoice.SerialList);
-                        ViewBag.Status = result;
+                        
                     }
                 }
                 else
@@ -200,6 +202,7 @@ namespace PlataformaWEB.Controllers
             {
                 throw new RequestErrorException(ex.Message);
             }
+            ModelState.Clear();
             return View(invoice);
         }
         

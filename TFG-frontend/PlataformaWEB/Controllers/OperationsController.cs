@@ -154,6 +154,8 @@ namespace PlataformaWEB.Controllers
             var countries = GetCountries();
             ViewBag.Countries = CountriesFillDropDown(countries.Items);
 
+            ViewBag.Status = "";
+
             return View(invoice);
         }
         
@@ -179,7 +181,7 @@ namespace PlataformaWEB.Controllers
                     invoice.SerialList = invoice.Serials.Split("/n").ToList();
                     var result = await _invoiceService.Register(invoice);
 
-                    if (!result.ResponseResult.Errors.Any())
+                    if (result.ResponseResult.Errors == null)
                     {
                         ViewBag.Status = "Factura con ID " + invoice.Id + " registrada";
                         invoice = new Invoice();

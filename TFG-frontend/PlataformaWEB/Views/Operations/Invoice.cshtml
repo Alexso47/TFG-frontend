@@ -18,9 +18,6 @@
     $(document).ready(function () {
         changeBuyerType();
         var status = '@ViewBag.Status';
-        status.replace("&#xF1;", "ñ");
-        status.replace("&#xF3;", "ó");
-        debugger;
         if (status != '') {
             alert(status);
         }

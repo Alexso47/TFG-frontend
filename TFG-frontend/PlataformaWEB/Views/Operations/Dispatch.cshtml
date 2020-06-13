@@ -18,6 +18,10 @@
 
     $(document).ready(function () {
         changeDestinationType()
+        var status = '@ViewBag.Status';
+        if (status != '') {
+            alert(status);
+        }
     });
 
     function changeDestinationType() {
@@ -38,12 +42,13 @@
             <span style="text-align: left"></span>
         </div>
         <div class="row" id="content_data">
-            <label class="col-2 control-label">Id*</label>
-            <div class="col-3">
-                <input asp-for="Facility" placeholder="Facility de envío*" />
+            <label class="col-2 control-label">Facility*</label>
+            <div class="col-4">
+                <select asp-for="Facility" class="dropdown-Facilities" data-val-required="El campo Facility no debe estar vacío"
+                        asp-items="@(new SelectList(ViewBag.Facilities,"Value","Text"))"></select>
                 <span asp-validation-for="Facility" class="text-danger"></span>
             </div>
-            <label class="col-3 control-label">Fecha de envío*</label>
+            <label class="col-2 control-label">Fecha de envío*</label>
             <div class="col-3 demo-section k-content" id="ppp">
                 <div id="dtpickerSelect">
                     <input type="date" value="" asp-for="DispatchDate" />
@@ -95,27 +100,35 @@
             </div>
         </div>
         <div id="destinationInEU">
-            <div class="row" id="content_data">
-                <label class="col-2 control-label">Facility de destino en EU</label>
-                <div class="col-5">
-                    <input placeholder="Facility" class="form-control" type="text" id="facilityToAdd" />
-                </div>
-                <div class="col-3" style="text-align:left">
-                    <button type="button" id="buttonNewFacility" class="btn btn-default" onclick="AddFacilityToList()">
-                        Añadir
-                    </button>
-                </div>
+            @*<div class="row" id="content_data">
+            <label class="col-2 control-label">Facility de destino en EU</label>
+            <div class="col-5">
+                <input placeholder="Facility" class="form-control" type="text" id="facilityToAdd" />
             </div>
+            <div class="col-3" style="text-align:left">
+                <button type="button" id="buttonNewFacility" class="btn btn-default" onclick="AddFacilityToList()">
+                    Añadir
+                </button>
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <div class="col-2 control-label">Facilities</div>
+            <div class="col-5" style="height:380px">
+                <select class="form-control" id="facilities" style="height:350px" multiple ondblclick="removeFacility()">@ViewBag.FacilitiesList</select>
+                <input type="hidden" asp-for="DestinationFacilities" id="txthdnFacilities" value="@ViewBag.JsonFacilities" />
+            </div>
+            <div class="col-3" style="text-align:left">
+                <button type="button" id="buttonRemoveFacility" class="btn btn-default" value="Remove selected" onclick="removeFacility()">
+                    Eliminar seleccionado
+                </button>
+            </div>
+        </div>*@
             <div class="row" id="content_data">
-                <div class="col-2 control-label">Facilities</div>
-                <div class="col-5" style="height:380px">
-                    <select class="form-control" id="facilities" style="height:350px" multiple ondblclick="removeFacility()">@ViewBag.FacilitiesList</select>
-                    <input type="hidden" asp-for="DestinationFacilities" id="txthdnFacilities" value="@ViewBag.JsonFacilities" />
-                </div>
-                <div class="col-3" style="text-align:left">
-                    <button type="button" id="buttonRemoveFacility" class="btn btn-default" value="Remove selected" onclick="removeFacility()">
-                        Eliminar seleccionado
-                    </button>
+                <label class="col-2 control-label">Facility*</label>
+                <div class="col-4">
+                    <select asp-for="DestinationFacility" class="dropdown-Facilities" data-val-required="El campo de la Facility de destinación no debe estar vacío"
+                            asp-items="@(new SelectList(ViewBag.Facilities,"Value","Text"))"></select>
+                    <span asp-validation-for="DestinationFacility" class="text-danger"></span>
                 </div>
             </div>
         </div>

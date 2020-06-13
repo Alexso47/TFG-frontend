@@ -46,14 +46,12 @@ namespace PlataformaWEB.Services
             try
             {
                 response.EnsureSuccessStatusCode();
-
                 return result;
             }
             catch
             {
                 return result;
             }
-            
         }
 
         public async Task<PaginatedList<InvoiceReport>> GetInvoices()
@@ -71,7 +69,6 @@ namespace PlataformaWEB.Services
             return result;
         }
 
-        
         public async Task<PaginatedList<InvoiceReport>> GetFilteredInvoices(InvoiceFilters filters)
         {
             var uri = API.Invoice.GetFilteredInvoices(_remoteServiceBaseUrl, filters);

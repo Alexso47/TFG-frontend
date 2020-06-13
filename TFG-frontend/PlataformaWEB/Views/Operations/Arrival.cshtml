@@ -13,6 +13,17 @@
 
 <script src="~/js/Serial.js"></script>
 
+<script>
+
+    $(document).ready(function () {
+        var status = '@ViewBag.Status';
+        if (status != '') {
+            alert(status);
+        }
+    });
+
+</script>
+
 <div class="row">
     <form class="form-x" asp-controller="OperationsController" asp-action="Arrival" method="post" enctype="multipart/form-data">
         <div id="msg_error" style="visibility:hidden;display:none;">
@@ -31,6 +42,15 @@
             <label class="col-2 control-label">Comentarios</label>
             <div class="col-9">
                 <input asp-for="Comments" placeholder="Comentarios" />
+            </div>
+        </div>
+        <div class="row" id="content_data">
+            <label class="col-2 control-label">Fecha*</label>
+            <div class="col-3 demo-section k-content" id="ppp">
+                <div id="dtpickerSelect">
+                    <input type="date" value="" asp-for="ArrivalDate" />
+                    <span asp-validation-for="ArrivalDate" class="text-danger"></span>
+                </div>
             </div>
         </div>
         <div class="sub">

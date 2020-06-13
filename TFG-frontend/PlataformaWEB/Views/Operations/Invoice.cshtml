@@ -80,12 +80,12 @@
         </div>
         <div id="buyerInEU">
             <div class="row" id="content_data">
-                <label class="col-2 control-label">Id del comprador</label>
+                <label class="col-2 control-label">Facility*</label>
                 <div class="col-4">
-                    <input asp-for="BuyerID" placeholder="Id del comprador registrado" />
+                    <select asp-for="BuyerID" class="dropdown-Facilities" data-val-required="El campo del ID del comprador no debe estar vacío"
+                            asp-items="@(new SelectList(ViewBag.Facilities,"Value","Text"))"></select>
                     <span asp-validation-for="BuyerID" class="text-danger"></span>
                 </div>
-                <label class="col-3 control-label" style="font-size:15px; color:grey; text-align:center; ">(Introducir solamente compradores registrados)</label>
             </div>
         </div>
         <div id="buyerNoEU">

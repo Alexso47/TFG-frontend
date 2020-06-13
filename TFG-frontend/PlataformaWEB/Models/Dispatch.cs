@@ -22,14 +22,9 @@ namespace PlataformaWEB.Models
         [Display(Name = "Hora de envío")]
         public string DispatchHour { get; set; }
 
-        [Required]
-        public double UTCminutes { get; set; }
-
         public bool DestinationEU { get; set; }
 
-        public string DestinationFacilities { get; set; }
-
-        public List<string> DestinationFacilitiesList { get; set; }
+        public string DestinationFacility { get; set; }
 
         public string DestinationName { get; set; }
 
@@ -45,7 +40,7 @@ namespace PlataformaWEB.Models
 
         public List<string> SerialList { get; set; }
 
-        public int TransportMode { get; set; }
+        public string TransportMode { get; set; }
 
         public string Vehicle { get; set; }
     }

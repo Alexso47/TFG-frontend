@@ -37,7 +37,16 @@ namespace PlataformaWEB.Controllers
             var arrival = new Arrival();
 
             var facilities = GetFIDS();
-            ViewBag.Facilities = FillDropDown(facilities.Items);
+            if(facilities.Result != null)
+            {
+                ViewBag.Facilities = FillDropDown(facilities.Result);
+            }
+            else
+            {
+                ViewBag.Facilities = new List<SelectListItem>();
+            }
+
+            ViewBag.Status = "";
 
             return View(arrival);
         }
@@ -46,9 +55,6 @@ namespace PlataformaWEB.Controllers
         [HttpPost]
         public async Task<ActionResult> Arrival(Arrival arrival)
         {
-            var facilities = GetFIDS();
-            ViewBag.Facilities = FillDropDown(facilities.Items);
-
             try
             {
                 if (arrival.Serials == null || arrival.Serials.Count() == 0)
@@ -59,22 +65,34 @@ namespace PlataformaWEB.Controllers
                 arrival.SerialList = arrival.Serials.Split("/n").ToList();
                 var result = await _arrivalService.Register(arrival);
                 
-                if (result == "OK")
+                if (result.ResponseResult.Errors == null)
                 {
+                    ViewBag.Status = "Recepcion con ID " + result.Reference.ArrivalNumber + " registrada";
                     arrival = new Arrival();
-                    ViewBag.Status = "Arrival registrado";
                 }
                 else
                 {
+                    ViewBag.Status = result.ResponseResult.Errors.FirstOrDefault().ErrorMessage;
+                    arrival = new Arrival();
                     ViewBag.Serials = arrival.SerialList;
                     ViewBag.JsonSerials = JsonConvert.SerializeObject(arrival.SerialList);
-                    ViewBag.Status = "No registrado";
                 }
             }
             catch(Exception ex)
             {
                 throw new RequestErrorException(ex.Message);
             }
+
+            var facilities = GetFIDS();
+            if (facilities.Result != null)
+            {
+                ViewBag.Facilities = FillDropDown(facilities.Result);
+            }
+            else
+            {
+                ViewBag.Facilities = new List<SelectListItem>();
+            }
+            ModelState.Clear();
             return View(arrival);
         }
 
@@ -85,11 +103,20 @@ namespace PlataformaWEB.Controllers
         {
             var dispatch = new Dispatch();
 
-            var facilities = GetFIDS();
-            ViewBag.Facilities = FillDropDown(facilities.Items);
-
             var countries = GetCountries();
             ViewBag.Countries = CountriesFillDropDown(countries.Items);
+
+            ViewBag.Status = "";
+
+            var facilities = GetFIDS();
+            if (facilities.Result != null)
+            {
+                ViewBag.Facilities = FillDropDown(facilities.Result);
+            }
+            else
+            {
+                ViewBag.Facilities = new List<SelectListItem>();
+            }
 
             return View(dispatch);
         }
@@ -98,9 +125,6 @@ namespace PlataformaWEB.Controllers
         [HttpPost]
         public async Task<ActionResult> Dispatch(Dispatch dispatch)
         {
-            var facilities = GetFIDS();
-            ViewBag.Facilities = FillDropDown(facilities.Items);
-
             var countries = GetCountries();
             ViewBag.Countries = CountriesFillDropDown(countries.Items);
            
@@ -112,36 +136,40 @@ namespace PlataformaWEB.Controllers
                 }
 
                 dispatch.SerialList = dispatch.Serials.Split("/n").ToList();
-
-                if (dispatch.DestinationFacilities == null || dispatch.DestinationFacilities.Count() == 0)
-                {
-                    throw new Exception("No hay seriales definidos");
-                }
-
-                dispatch.DestinationFacilitiesList = dispatch.DestinationFacilities.Split("/n").ToList();
                 var result = await _dispatchService.RegisterDispatch(dispatch);
 
-                if (result == "OK")
+                if (result.ResponseResult.Errors == null)
                 {
+                    ViewBag.Status = "La recepcion con ID " + dispatch.Facility + " registrada";
                     dispatch = new Dispatch();
-                    ViewBag.Status = "Arrival registrado";
                 }
                 else
                 {
-                    ViewBag.Facilities = dispatch.DestinationFacilitiesList;
+                    dispatch = new Dispatch();
+                    ViewBag.Status = result.ResponseResult.Errors.FirstOrDefault().ErrorMessage;
                     ViewBag.Serials = dispatch.SerialList;
-                    ViewBag.JsonFacilities = JsonConvert.SerializeObject(dispatch.DestinationFacilitiesList);
                     ViewBag.JsonSerials = JsonConvert.SerializeObject(dispatch.SerialList);
-                    ViewBag.Status = result;
                 }
             }
             catch (Exception ex)
             {
                 throw new RequestErrorException(ex.Message);
             }
+            ModelState.Clear();
+
+            var facilities = GetFIDS();
+            if (facilities.Result != null)
+            {
+                ViewBag.Facilities = FillDropDown(facilities.Result);
+            }
+            else
+            {
+                ViewBag.Facilities = new List<SelectListItem>();
+            }
             return View(dispatch);
         }
 
+        // Invoice
         [Route("~/OperationsController/Invoice")]
         [HttpGet]
         public ActionResult Invoice()
@@ -156,6 +184,20 @@ namespace PlataformaWEB.Controllers
 
             ViewBag.Status = "";
 
+            invoice.SerialList = new List<string>();
+
+            invoice.Serials = "";
+
+            var facilities = GetFIDS();
+            if (facilities.Result != null)
+            {
+                ViewBag.Facilities = FillDropDown(facilities.Result);
+            }
+            else
+            {
+                ViewBag.Facilities = new List<SelectListItem>();
+            }
+
             return View(invoice);
         }
         
@@ -168,7 +210,6 @@ namespace PlataformaWEB.Controllers
 
             var countries = GetCountries();
             ViewBag.Countries = CountriesFillDropDown(countries.Items);
-
             try
             {
                 if (ModelState.IsValid)
@@ -190,9 +231,9 @@ namespace PlataformaWEB.Controllers
                     {
                         ViewBag.Status = result.ResponseResult.Errors.FirstOrDefault().ErrorMessage;
                         invoice = new Invoice();
-                        ViewBag.Serials = invoice.SerialList;
+                        invoice.SerialList = new List<string>();
+                        invoice.Serials = "";
                         ViewBag.JsonSerials = JsonConvert.SerializeObject(invoice.SerialList);
-                        
                     }
                 }
                 else
@@ -205,9 +246,22 @@ namespace PlataformaWEB.Controllers
                 throw new RequestErrorException(ex.Message);
             }
             ModelState.Clear();
+
+            var facilities = GetFIDS();
+            if (facilities.Result != null)
+            {
+                ViewBag.Facilities = FillDropDown(facilities.Result);
+            }
+            else
+            {
+                ViewBag.Facilities = new List<SelectListItem>();
+            }
+
             return View(invoice);
         }
         
+
+        // **** To Develop
         public ActionResult Order()
         {
             return View();
@@ -217,43 +271,17 @@ namespace PlataformaWEB.Controllers
         {
             return View();
         }
+        // ****
+
 
         //API CALLS
-        //private async Task<PaginatedList<string>> GetCountries()
-        //{
-        //    PaginatedList<string> countries = await _countryService.GetCountriesName();
-        //    return countries;
-        //}
-
-        //private async Task<PaginatedList<string>> GetFIDS()
-        //{
-        //    PaginatedList<string> fids = await _facilityService.GetFIDs();
-        //    return fids;
-        //}
-
-        //private async Task<PaginatedList<string>> GetCurrencies()
-        //{
-        //    PaginatedList<string> currencies = await _currencyService.GetCurrencies();
-        //    return currencies;
-        //}
-
-        private PaginatedList<string> GetFIDS()
+        private async Task<List<string>> GetFIDS()
         {
-            List<string> fids = new List<string>();
-            fids.Add("FID1");
-            fids.Add("FID2");
-            fids.Add("FID3");
-            fids.Add("FID4");
-            fids.Add("FID5");
-
-            var fidsPL = new PaginatedList<string>()
-            {
-                Items = fids
-            };
-            
-            return fidsPL;
+            List<string> fids = await _facilityService.GetFIDs();
+            return fids;
         }
 
+        //Sets
         private PaginatedList<Country> GetCountries()
         {
             Country andorra = new Country("Andorra");
@@ -292,7 +320,7 @@ namespace PlataformaWEB.Controllers
         private List<SelectListItem> FillDropDown(IEnumerable<string> list)
         {
             var aux = new List<SelectListItem>();
-            var white = new SelectListItem("", "");
+            var white = new SelectListItem("- Selecciona -", "");
             aux.Add(white);
             if (list != null)
             {
@@ -312,7 +340,7 @@ namespace PlataformaWEB.Controllers
         private List<SelectListItem> CountriesFillDropDown(IEnumerable<Country> list)
         {
             var countries = new List<SelectListItem>();
-            var white = new SelectListItem("", "");
+            var white = new SelectListItem("- Selecciona -", "");
             countries.Add(white);
             foreach (var item in list)
             {

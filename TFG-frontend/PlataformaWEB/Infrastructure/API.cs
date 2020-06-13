@@ -59,7 +59,7 @@ namespace PlataformaWEB.Infrastructure
 
             public static string GetFIDs(string baseUri)
             {
-                return $"{baseUri}";
+                return $"{baseUri}/FIDS";
             }
 
             public static string GetFIDsByEOID(string baseUri, string eoid)
@@ -145,7 +145,7 @@ namespace PlataformaWEB.Infrastructure
         {
             public static string RegisterArrival(string baseUri)
             {
-                return $"{baseUri}/arrivalToFacility";
+                return $"{baseUri}/Create";
             }
 
             public static string GetArrivals(string baseUri)
@@ -223,7 +223,7 @@ namespace PlataformaWEB.Infrastructure
         {
             public static string RegisterDispatch(string baseUri)
             {
-                return $"{baseUri}";
+                return $"{baseUri}/Create";
             }
 
             public static string GetDispatches(string baseUri)

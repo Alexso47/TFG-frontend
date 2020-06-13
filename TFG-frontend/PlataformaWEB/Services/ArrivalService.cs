@@ -6,6 +6,7 @@ using PlataformaWEB.Dto;
 using PlataformaWEB.Exceptions;
 using PlataformaWEB.Infrastructure;
 using PlataformaWEB.Models;
+using PlataformaWEB.Models.PostRequests.Arrival;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,35 +27,30 @@ namespace PlataformaWEB.Services
             _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/arrival";
         }
 
-        async public Task<string> Register(Arrival arrival)
-        { 
-            var arrivalDTO = new ArrivalDTO()
-            {
-                RequestHeader = new RequestHeader()
-                {
-                    RequestId = Guid.NewGuid().ToString()
-                },
-                Reference = new Arrival2FacilityReference()
-                {
-                    FacilityID = arrival.Facility,
-                    EventTime = DateTimeOffset.UtcNow
-                },
-                Comments = arrival.Comments,
-                Serials = arrival.SerialList
-            };
-
+        async public Task<ArrivalResponse> Register(Arrival arrival)
+        {
+            var arrivalDTO = arrivalToArrivalRequestDto(arrival);
             var jsonInString = JsonConvert.SerializeObject(arrivalDTO);
             var uri = API.Arrival.RegisterArrival(_remoteServiceBaseUrl);
+
             var response = await _httpClient.PostAsync(uri, new StringContent(jsonInString, Encoding.UTF8, "application/json"));
 
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
                 throw new Exception("Error registrando la llegada");
             }
-
-            response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<string>(responseString);
+            var result = JsonConvert.DeserializeObject<ArrivalResponse>(responseString);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+                return result;
+            }
+            catch
+            {
+                return result;
+            }
         }
 
         public async Task<PaginatedList<ArrivalReport>> GetArrivals()
@@ -85,6 +81,24 @@ namespace PlataformaWEB.Services
             var jsonResult = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<PaginatedList<ArrivalReport>>(jsonResult);
             return result;
+        }
+
+        private ArrivalDTO arrivalToArrivalRequestDto(Arrival arrival)
+        {
+
+            RequestHeader requestHeader = new RequestHeader();
+            requestHeader.DateRequest = DateTimeOffset.UtcNow.ToString("yyyyMMdd");
+            requestHeader.TimeRequest = DateTimeOffset.UtcNow.ToString("hhmmss");
+            requestHeader.RequestId = Guid.NewGuid().ToString();
+
+            return new ArrivalDTO()
+            {
+                Comments = arrival.Comments,
+                FID = arrival.Facility,
+                ArrivalDate = arrival.ArrivalDate,
+                RequestHeader = requestHeader,
+                Serials = arrival.SerialList
+            };
         }
     }
 }

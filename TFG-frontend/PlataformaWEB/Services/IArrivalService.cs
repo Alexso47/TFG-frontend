@@ -1,4 +1,5 @@
 using PlataformaWEB.Models;
+using PlataformaWEB.Models.PostRequests.Arrival;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace PlataformaWEB.Services
 {
     public interface IArrivalService
     {
-        public Task<string> Register(Arrival arrival);
+        public Task<ArrivalResponse> Register(Arrival arrival);
 
         public Task<PaginatedList<ArrivalReport>> GetArrivals();
 

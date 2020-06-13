@@ -20,10 +20,12 @@ namespace PlataformaWEB.Services
         private HttpClient _httpClient;
         private readonly string _remoteServiceBaseUrl;
 
-        public FacilityService(HttpClient httpClient, IOptions<AppSettings> settings)
+        private static string _connectionOptions;
+
+        public FacilityService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/facility";
+            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/facility";
         }
 
         async public Task<int> Create(Facility facility)

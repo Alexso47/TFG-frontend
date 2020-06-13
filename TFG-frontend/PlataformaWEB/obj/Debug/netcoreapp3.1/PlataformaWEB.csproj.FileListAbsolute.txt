@@ -483,7 +483,6 @@ X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csprojAssemblyReference.cache
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.AssemblyInfoInputs.cache
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.AssemblyInfo.cs
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csproj.CoreCompileInputs.cache

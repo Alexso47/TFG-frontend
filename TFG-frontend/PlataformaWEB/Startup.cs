@@ -18,6 +18,7 @@ using System;
 using PlataformaWEB.Configuration;
 using PlataformaWEB.Extensions;
 using Microsoft.Extensions.Hosting;
+using PlataformaWEB.Models;
 
 #endregion
 
@@ -35,6 +36,15 @@ namespace PlataformaWEB
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			Action<ConnectionOptions> connectionOptions = (opt =>
+			{
+				opt.apiDevelop = "https://apitfgalex.azurewebsites.net";
+				opt.apiLocal = "http://localhost:5001";
+			});
+
+			services.Configure(connectionOptions);
+			services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<ConnectionOptions>>().Value);
+
 			services.Configure<AppSettings>(_configuration);
 
 			services.AddControllersWithViews();

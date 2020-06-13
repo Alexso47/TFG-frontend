@@ -21,11 +21,12 @@ namespace PlataformaWEB.Services
     {
         private HttpClient _httpClient;
         private readonly string _remoteServiceBaseUrl;
+        private static readonly string _connectionOptions;
 
-        public InvoiceService(HttpClient httpClient, IOptions<AppSettings> settings)
+        public InvoiceService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/invoice";
+            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/invoice";
         }
 
         async public Task<InvoiceResponse> Register(Invoice invoice)

@@ -23,7 +23,7 @@ namespace PlataformaWEB.Services
         public FacilityService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "http://localhost:5001/";
+            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/facility";
         }
 
         async public Task<int> Create(Facility facility)
@@ -54,17 +54,17 @@ namespace PlataformaWEB.Services
             return Int32.Parse(createdfacility.Id);
         }
 
-        async public Task<PaginatedList<string>> GetFIDs()
+        async public Task<List<string>> GetFIDs()
         {
             var uri = API.Facility.GetFIDs(_remoteServiceBaseUrl);
             var response = await _httpClient.GetAsync(uri);
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new Exception("Error getting facilities IDs");
+                throw new Exception("Error obteniendo FIDS");
             }
             response.EnsureSuccessStatusCode();
             var jsonResult = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<PaginatedList<string>>(jsonResult);
+            var result = JsonConvert.DeserializeObject<List<string>>(jsonResult);
             return result;
         }
 

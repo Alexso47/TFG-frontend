@@ -10,7 +10,7 @@ namespace PlataformaWEB.Services
     {
         Task<int> Create(Facility facility);
 
-        Task<PaginatedList<string>> GetFIDs();
+        Task<List<string>> GetFIDs();
 
         Task<PaginatedList<string>> GetFIDsByEOID(string eoid);
 

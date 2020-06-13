@@ -6,6 +6,7 @@ using PlataformaWEB.Dto;
 using PlataformaWEB.Exceptions;
 using PlataformaWEB.Infrastructure;
 using PlataformaWEB.Models;
+using PlataformaWEB.Models.PostRequests;
 using PlataformaWEB.Models.Reports;
 using System;
 using System.Collections.Generic;
@@ -24,23 +25,34 @@ namespace PlataformaWEB.Services
         public DispatchService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "http://localhost:5001/api/dispatch";
+            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/dispatch";
         }
 
-        public async Task<string> RegisterDispatch(Dispatch dispatch)
+        public async Task<DispatchResponse> RegisterDispatch(Dispatch dispatch)
         {
             var uri = API.Dispatch.RegisterDispatch(_remoteServiceBaseUrl);
             var dispatchRequestDto = dispatchToDispatchRequestDto(dispatch);
             var jsonInString = JsonConvert.SerializeObject(dispatchRequestDto);
+
             var response = await _httpClient.PostAsync(uri, new StringContent(jsonInString, Encoding.UTF8, "application/json"));
+
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
                 throw new Exception($"Error registrando el envío");
             }
-            response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
 
-            return JsonConvert.DeserializeObject<string>(responseString);
+            var responseString = await response.Content.ReadAsStringAsync();
+            var result =  JsonConvert.DeserializeObject<DispatchResponse>(responseString);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+                return result;
+            }
+            catch
+            {
+                return result;
+            }
         }
 
         public async Task<List<DispatchReport>> GetDispatches()
@@ -75,10 +87,16 @@ namespace PlataformaWEB.Services
 
         private DispatchDto dispatchToDispatchRequestDto(Dispatch dispatch)
         {
+            RequestHeader requestHeader = new RequestHeader();
+            requestHeader.DateRequest = DateTimeOffset.UtcNow.ToString("yyyyMMdd");
+            requestHeader.TimeRequest = DateTimeOffset.UtcNow.ToString("hhmmss");
+            requestHeader.RequestId = Guid.NewGuid().ToString();
+
             double hours = 0.0;
             double.TryParse(dispatch.DispatchHour, out hours);
             var dispatchDateTimeOffset = dispatch.DispatchDate.AddHours(hours).DateTime;
-            var DispatchDateOffset = new DateTimeOffset(dispatchDateTimeOffset, TimeSpan.FromMinutes(0)).AddMinutes(dispatch.UTCminutes);
+            var DispatchDateOffset = new DateTimeOffset(dispatchDateTimeOffset);
+
             return new DispatchDto()
             {
                 DestinationAddress = dispatch.DestinationAddress,
@@ -86,16 +104,15 @@ namespace PlataformaWEB.Services
                 DestinationZipCode = dispatch.DestinationZipCode,
                 DestinationCountry = dispatch.DestinationCountry,
                 DestinationName = dispatch.DestinationName,
-                DestinationEU = Convert.ToInt32(dispatch.DestinationEU),
+                DestinationEU = dispatch.DestinationEU ? (byte) 1: (byte) 0,
+                DestinationFacility = dispatch.DestinationFacility,
                 Facility = dispatch.Facility,
-                DestinationFacilities = dispatch.DestinationFacilitiesList,
                 Serials = dispatch.SerialList,
                 TransportMode = dispatch.TransportMode,
                 Vehicle = dispatch.Vehicle,
-                DispatchDate = DispatchDateOffset
+                DispatchDate = DispatchDateOffset,
+                RequestHeader = requestHeader
             };
-        }
-
-        
+        }        
     }
 }

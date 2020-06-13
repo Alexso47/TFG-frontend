@@ -12,9 +12,9 @@ namespace PlataformaWEB.Dto
 
         public DateTimeOffset DispatchDate { get; set; }
 
-        public int? DestinationEU { get; set; }
+        public byte DestinationEU { get; set; }
 
-        public List<string> DestinationFacilities { get; set; }
+        public string DestinationFacility { get; set; }
 
         public string DestinationName { get; set; }
 
@@ -26,10 +26,12 @@ namespace PlataformaWEB.Dto
 
         public string DestinationZipCode { get; set; }
 
-        public List<string> Serials { get; set; }
-
-        public int TransportMode { get; set; }
+        public string TransportMode { get; set; }
 
         public string Vehicle { get; set; }
+
+        public List<string> Serials { get; set; }
+
+        public RequestHeader RequestHeader { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace PlataformaWEB.Services
         public CurrencyService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "http://localhost:5001/";
+            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/";
         }
 
         async public Task<PaginatedList<string>> GetCurrencies()

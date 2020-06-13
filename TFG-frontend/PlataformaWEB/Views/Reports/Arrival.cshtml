@@ -71,11 +71,15 @@
 
             </th>
             <th class="th-sm">
+                Fecha de registro
+
+            </th>
+            <th class="th-sm">
                 Comentarios
 
             </th>
             <th class="th-sm">
-                    Seriales
+                Seriales
 
             </th>
         </tr>
@@ -86,6 +90,7 @@
             <tr>
                 <td>@element.Id</td>
                 <td>@element.FID</td>
+                <td>@element.ArrivalDate.ToString("dd/MM/yyyy")</td>
                 <td>@element.Comments</td>
                 <td>
                     @foreach (var serial in element.Serials)

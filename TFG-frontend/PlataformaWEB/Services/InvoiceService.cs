@@ -25,7 +25,7 @@ namespace PlataformaWEB.Services
         public InvoiceService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "http://localhost:5001/api/invoice";
+            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/invoice";
         }
 
         async public Task<InvoiceResponse> Register(Invoice invoice)
@@ -46,14 +46,12 @@ namespace PlataformaWEB.Services
             try
             {
                 response.EnsureSuccessStatusCode();
-
                 return result;
             }
             catch
             {
                 return result;
             }
-            
         }
 
         public async Task<PaginatedList<InvoiceReport>> GetInvoices()
@@ -71,7 +69,6 @@ namespace PlataformaWEB.Services
             return result;
         }
 
-        
         public async Task<PaginatedList<InvoiceReport>> GetFilteredInvoices(InvoiceFilters filters)
         {
             var uri = API.Invoice.GetFilteredInvoices(_remoteServiceBaseUrl, filters);

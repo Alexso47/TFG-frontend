@@ -12,6 +12,8 @@
     function NewFacility() {
         $("#new-FIDs").css("display", "flex");
         $("#dropdown-FIDs").css("display", "none");
+        $("#buttonCancel").css("display", "inline-block");
+        $("#buttonSubmit").css("display", "inline-block");
         CleanFields();
     }
 
@@ -76,6 +78,13 @@
         })
     }
 
+    $(document).ready(function () {
+    var status = '@ViewBag.Status';
+    if (status != '') {
+        alert(status);
+    }
+    });
+
 </script>
 
 <h1 class="title">@ViewData["Title"]</h1>
@@ -106,9 +115,9 @@
         <div class="row" id="new-FIDs">
             <label class="col-2 control-label">Id*</label>
             <div class="col-9">
-                <input asp-for="Id" placeholder="FacilityID" id="fid-id" data-val-required="El campo FacilityID no debe estar vacío" />
+                <input asp-for="NewId" placeholder="FacilityID" id="fid-id" data-val-required="El campo FacilityID no debe estar vacío" />
                 <div class="row">
-                    <span asp-validation-for="Id" class="text-danger"></span>
+                    <span asp-validation-for="NewId" class="text-danger"></span>
                 </div>
             </div>
         </div>
@@ -174,12 +183,12 @@
                 </button>
             </div>
             <div class="col-7" style="text-align:right">
-                <button type="button" id="buttonCancel" class="btn btn-default" onclick="javascript:window.location.reload(false);">
+                <button type="button" id="buttonCancel" class="btn btn-default" style="display:none;" onclick="javascript:window.location.reload(false);">
                     Cancelar
                 </button>
             </div>
             <div class="col-2" style="text-align:right">
-                <button class="btn btn-primary" id="buttonSubmit" type="submit">
+                <button class="btn btn-primary" id="buttonSubmit" style="display:none;" type="submit">
                     <i class="fa fa-save"></i>
                     Guardar
                 </button>

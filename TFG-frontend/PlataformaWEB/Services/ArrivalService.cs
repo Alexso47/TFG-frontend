@@ -20,11 +20,12 @@ namespace PlataformaWEB.Services
     {
         private HttpClient _httpClient;
         private readonly string _remoteServiceBaseUrl;
+        private static string _connectionOptions;
 
-        public ArrivalService(HttpClient httpClient, IOptions<AppSettings> settings)
+        public ArrivalService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/arrival";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/arrival";
         }
 
         async public Task<ArrivalResponse> Register(Arrival arrival)

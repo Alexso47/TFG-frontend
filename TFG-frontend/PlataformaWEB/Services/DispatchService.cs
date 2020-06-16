@@ -21,11 +21,12 @@ namespace PlataformaWEB.Services
     {
         private HttpClient _httpClient;
         private readonly string _remoteServiceBaseUrl;
+        private static string _connectionOptions;
 
-        public DispatchService(HttpClient httpClient, IOptions<AppSettings> settings)
+        public DispatchService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/dispatch";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/dispatch";
         }
 
         public async Task<DispatchResponse> RegisterDispatch(Dispatch dispatch)

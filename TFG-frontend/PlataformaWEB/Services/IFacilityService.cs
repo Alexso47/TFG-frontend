@@ -1,4 +1,5 @@
 using PlataformaWEB.Models;
+using PlataformaWEB.Models.PostRequests.Facility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,12 @@ namespace PlataformaWEB.Services
 {
     public interface IFacilityService
     {
-        Task<int> Create(Facility facility);
+        Task<FacilityResponse> Create(Facility facility);
 
         Task<List<string>> GetFIDs();
 
-        Task<PaginatedList<string>> GetFIDsByEOID(string eoid);
+        Task<List<string>> GetFIDsByEOID(string eoid);
 
-        //Task<PaginatedList<Facility>> GetFacilityByFID(string fid);
+        Task<FacilityResult> GetFacilityByFID(string fid);
     }
 }

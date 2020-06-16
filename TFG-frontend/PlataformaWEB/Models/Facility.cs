@@ -8,10 +8,13 @@ namespace PlataformaWEB.Models
 {
     public class Facility
     {
-        [Required]
         [Display(Name = "FID")]
         [StringLength(20, MinimumLength = 1, ErrorMessage = "La longitud del campo deber ser entre {2} y {1}")]
         public string Id { get; set; }
+
+        [Display(Name = "FID")]
+        [StringLength(20, MinimumLength = 1, ErrorMessage = "La longitud del campo deber ser entre {2} y {1}")]
+        public string NewId { get; set; }
 
         [Required]
         [Display(Name = "EOID")]

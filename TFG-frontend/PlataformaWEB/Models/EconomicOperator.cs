@@ -11,10 +11,14 @@ namespace PlataformaWEB.Models
     {
         public EconomicOperator() { }
 
-        [Required]
         [Display(Name = "EOID")]
         [StringLength(20, MinimumLength = 1, ErrorMessage = "La longitud del campo deber ser entre {2} y {1}")]
         public string Id { get; set; }
+
+        
+        [Display(Name = "EOID")]
+        [StringLength(20, MinimumLength = 1, ErrorMessage = "La longitud del campo deber ser entre {2} y {1}")]
+        public string NewId { get; set; }
 
         [Required]
         [Display(Name = "Nombre")]

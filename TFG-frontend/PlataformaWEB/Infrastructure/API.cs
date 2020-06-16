@@ -14,47 +14,31 @@ namespace PlataformaWEB.Infrastructure
         {
             public static string UpdateEconomicOperator(string baseUri)
             {
-                return $"{baseUri}";
+                return $"{baseUri}/Update";
             }
 
             public static string CreateEconomicOperator(string baseUri)
             {
-                return $"{baseUri}";
+                return $"{baseUri}/Create";
             }
 
-            public static string GetEOIDs(string baseUri)
+            public static string GetEOIDS(string baseUri)
             {
-                return $"{baseUri}";
+                return $"{baseUri}/EOIDS";
             }
 
             public static string GetEOInfo(string baseUri, string eoid)
             {
                 return $"{baseUri}/GetEOInfo?" +
-                    $"eoid={HttpUtility.UrlEncode(eoid)}";
+                    $"Id={HttpUtility.UrlEncode(eoid)}";
             }
-
-            //public static string Summary(string baseUri, string code, int countryId, string enabled, int pageIndex, int pageSize, IEnumerable<Sort> sortInfo)
-            //{
-            //    string sortUrl = GetSortUrlQuery(sortInfo);
-            //    string paginationUrl = GetPaginationUrlQuery(pageIndex, pageSize);
-            //    return $"{baseUri}?" +
-            //        $"&code={HttpUtility.UrlEncode(code)}" +
-            //        $"&countryId={countryId}" +
-            //        $"&isEnabled={enabled}" +
-            //        $"&{paginationUrl}{sortUrl}";
-            //}
         }
 
         public static class Facility
         {
-            public static string UpdateFacility(string baseUri)
-            {
-                return $"{baseUri}";
-            }
-
             public static string CreateFacility(string baseUri)
             {
-                return $"{baseUri}";
+                return $"{baseUri}/Create";
             }
 
             public static string GetFIDs(string baseUri)
@@ -64,26 +48,15 @@ namespace PlataformaWEB.Infrastructure
 
             public static string GetFIDsByEOID(string baseUri, string eoid)
             {
-                return $"{baseUri}/GetFIDsByEOID?" +
-                    $"eoid={HttpUtility.UrlEncode(eoid)}";
+                return $"{baseUri}/FIDSByEOID?" +
+                    $"EOID={HttpUtility.UrlEncode(eoid)}";
             }
 
             public static string GetFacilityInfo(string baseUri, string fid)
             {
                 return $"{baseUri}/GetFacilityInfo?" +
-                    $"fid={HttpUtility.UrlEncode(fid)}";
+                    $"Id={HttpUtility.UrlEncode(fid)}";
             }
-
-            //public static string Summary(string baseUri, string code, int countryId, string enabled, int pageIndex, int pageSize, IEnumerable<Sort> sortInfo)
-            //{
-            //    string sortUrl = GetSortUrlQuery(sortInfo);
-            //    string paginationUrl = GetPaginationUrlQuery(pageIndex, pageSize);
-            //    return $"{baseUri}?" +
-            //        $"&code={HttpUtility.UrlEncode(code)}" +
-            //        $"&countryId={countryId}" +
-            //        $"&isEnabled={enabled}" +
-            //        $"{paginationUrl}{sortUrl}";
-            //}
         }
 
         public static class Machine

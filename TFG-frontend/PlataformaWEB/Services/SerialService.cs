@@ -20,11 +20,12 @@ namespace PlataformaWEB.Services
     {
         private HttpClient _httpClient;
         private readonly string _remoteServiceBaseUrl;
+        private static string _connectionOptions;
 
-        public SerialService(HttpClient httpClient, IOptions<AppSettings> settings)
+        public SerialService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = "https://apitfgalex.azurewebsites.net/api/serial";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/serial";
         }
 
         public async Task<PaginatedList<SerialReport>> GetFilteredSerials(SerialFilters filters)

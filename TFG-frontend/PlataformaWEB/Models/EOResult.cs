@@ -1,16 +1,17 @@
-using PlataformaWEB.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PlataformaWEB.Dto
-{
-    public class EconomicOperatorDto
-    {
-        public RequestHeader RequestHeader { get; set; }
 
+namespace PlataformaWEB.Models
+{
+    public class EOResult
+    {
         public string Id { get; set; }
+
+        public string NewId { get; set; }
 
         public string Name { get; set; }
 

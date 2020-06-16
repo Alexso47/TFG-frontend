@@ -1,16 +1,16 @@
-using PlataformaWEB.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PlataformaWEB.Dto
+namespace PlataformaWEB.Models
 {
-    public class FacilityDto
+    public class FacilityResult
     {
-        public RequestHeader RequestHeader { get; set; }
-
         public string Id { get; set; }
+
+        public string NewId { get; set; }
 
         public string EOID { get; set; }
 

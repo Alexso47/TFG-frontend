@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PlataformaWEB.Models;
+using PlataformaWEB.Models.PostRequests.EO;
 
 namespace PlataformaWEB.Services
 {
     public interface IEconomicOperatorService
     {
-        Task<int> Create(EconomicOperator economicOperator);
+        Task<EOResponse> Create(EconomicOperator economicOperator);
 
-        Task<PaginatedList<string>> GetEOIDs();
+        Task<List<string>> GetEOIDS();
 
         //Task<PaginatedList<string>> GetEconomicOperators();
 
-        Task<EconomicOperator> GetEconomicOperatorByEOID(string eoid);
+        Task<EOResult> GetEconomicOperatorByEOID(string eoid);
 
     }
 }

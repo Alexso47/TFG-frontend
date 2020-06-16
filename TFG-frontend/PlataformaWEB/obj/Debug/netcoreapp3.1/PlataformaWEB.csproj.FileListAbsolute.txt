@@ -528,3 +528,4 @@ X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.dll
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.pdb
 X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.genruntimeconfig.cache
+X:\Usuarios\aleko\Documents\Uni\2\TFG\GitHub\FrontEnd\TFG-frontend\PlataformaWEB\obj\Debug\netcoreapp3.1\PlataformaWEB.csprojAssemblyReference.cache

@@ -37,74 +37,90 @@ namespace PlataformaWEB.Controllers
             ViewBag.Countries = CountriesFillDropDown(countries.Items);
 
             var eoids = GetEOIDS();
-            ViewBag.EOIDs = FillDropDown(eoids.Items);
+            ViewBag.EOIDs = FillDropDown(eoids);
 
             return View("EconomicOperators", model);
         }
 
-        [Route("~/ManagementController/EditEconomicOperator")]
+        [Route("~/ManagementController/GetEO")]
         [HttpGet]
-        public async Task<IActionResult> EditEconomicOperator(string eoid)
+        public async Task<IActionResult> GetEO(string eoid)
         {
-            //var model = new EconomicOperator();
-            //try
-            //{
-            //    model = await _economicOperatorService.GetEconomicOperatorByEOID(eoid);
-            //    if (model == null)
-            //    {
-            //        BadRequest(eoid);
-            //    }
-            //    return Json(new { status = "OK", data = model });
-            //}
-            //catch (Exception ex)
-            //{
-            //    return Json(new { status = "ERROR", data = ex.Message });
-            //}
-            if(eoid == "EOID1")
+            var model = new EOResult();
+            try
             {
-                var model = new EconomicOperator
-                {
-                    Id = eoid,
-                    Name = "Prueba1",
-                    Description = "Prueba 1 sin acceder a la API",
-                    Address = "Calle TFG, 8",
-                    ZipCode = "08181",
-                    Country = "España",
-                    City = "Sentmenat",
-                    ActiveFrom = DateTimeOffset.Now.AddDays(-1)
-                };
+                model = await _economicOperatorService.GetEconomicOperatorByEOID(eoid);
 
-                return Json(new { status = "OK", data = model });
+                 
+                if (model == null)
+                {
+                    BadRequest(eoid);
+                }
+
+                var eo = new EconomicOperator
+                {
+                    Id = model.Id,
+                    ActiveFrom = model.ActiveFrom,
+                    Description = model.Description,
+                    Address = model.Address,
+                    City = model.City,
+                    Country = model.Country,
+                    Name = model.Name,
+                    NewId = model.NewId,
+                    ZipCode = model.ZipCode
+                };
+                return Json(new { status = "OK", data = eo });
+
+                
             }
-            else
+            catch (Exception ex)
             {
-                return Json(new { status = "ERROR", data = "error" });
-            } 
+                return Json(new { status = "ERROR", data = ex.Message });
+            }
+
         }
 
         [Route("~/ManagementController/EconomicOperator")]
         [HttpPost]
         public async Task<ActionResult> EconomicOperator(EconomicOperator economicOperator)
         {
+            if(economicOperator.NewId != null)
+            {
+                economicOperator.Id = economicOperator.NewId;
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        var result = await _economicOperatorService.Create(economicOperator);
+
+                        if (result != null && result.ResponseResult.Errors == null)
+                        {
+                            ViewBag.Status = "EO con ID " + result.Reference.EONumber + " ha sido registrado";
+                            economicOperator = new EconomicOperator();
+                        }
+                        else
+                        {
+                            ViewBag.Status = result.ResponseResult.Errors.FirstOrDefault().ErrorMessage;
+                            economicOperator = new EconomicOperator();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new RequestErrorException(ex.Message);
+                    }
+                }
+            }
+            
+            ModelState.Clear();
+
             var countries = GetCountries();
             ViewBag.Countries = CountriesFillDropDown(countries.Items);
 
             var eoids = GetEOIDS();
-            ViewBag.EOIDs = FillDropDown(eoids.Items);
+            ViewBag.EOIDs = FillDropDown(eoids);
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    int newEconomicOperatorId = await _economicOperatorService.Create(economicOperator);
-                    economicOperator.Id = newEconomicOperatorId.ToString();
-                }
-                catch
-                {
-                    throw new RequestErrorException("Error creando el Economic Operator");
-                }
-            }
-            return View("EconomicOperators",economicOperator);
+            return View("EconomicOperators", economicOperator);
         }
 
 
@@ -119,10 +135,10 @@ namespace PlataformaWEB.Controllers
             ViewBag.Countries = CountriesFillDropDown(countries.Items);
 
             var eoids = GetEOIDS();
-            ViewBag.EOIDs = FillDropDown(eoids.Items);
+            ViewBag.EOIDs = FillDropDown(eoids);
 
             var fids = GetFIDS("");
-            ViewBag.FIDs = FillDropDown(fids.Items);
+            ViewBag.FIDs = FillDropDown(fids);
 
             return View("Facilities", model);
         }
@@ -132,7 +148,7 @@ namespace PlataformaWEB.Controllers
         public IActionResult SetFIDs(string eoid)
         {
             var fids = GetFIDS(eoid);
-            var items = FillDropDown(fids.Items);
+            var items = FillDropDown(fids);
             return Json(items);
         }
 
@@ -140,68 +156,79 @@ namespace PlataformaWEB.Controllers
         [HttpGet]
         public async Task<IActionResult> EditFacility(string fid)
         {
-            //var model = new Facility();
-            //try
-            //{
-            //    model = await _facilityService.GetFacilityByFID(fid);
-            //    if (model == null)
-            //    {
-            //        BadRequest(eoid);
-            //    }
-            //    return Json(new { status = "OK", data = model });
-            //}
-            //catch (Exception ex)
-            //{
-            //    return Json(new { status = "ERROR", data = ex.Message });
-            //}
-            if (fid == "FID1")
+            var model = new FacilityResult();
+            try
             {
-                var model = new Facility
+                model = await _facilityService.GetFacilityByFID(fid);
+                if (model == null)
                 {
-                    EOID = "EOID1",
-                    Id = fid,
-                    Name = "Prueba1",
-                    Description = "Prueba 1 sin acceder a la API",
-                    Address = "Calle TFG, 8",
-                    ZipCode = "08181",
-                    Country = "España",
-                    City = "Sentmenat",
-                    ActiveFrom = DateTimeOffset.Now.AddDays(-1)
+                    BadRequest(fid);
+                }
+                var facility = new Facility
+                {
+                    Id = model.Id,
+                    EOID = model.EOID,
+                    ActiveFrom = model.ActiveFrom,
+                    Description = model.Description,
+                    Address = model.Address,
+                    City = model.City,
+                    Country = model.Country,
+                    Name = model.Name,
+                    NewId = model.NewId,
+                    ZipCode = model.ZipCode
                 };
-
-                return Json(new { status = "OK", data = model });
+                return Json(new { status = "OK", data = facility });
             }
-            else
+            catch (Exception ex)
             {
-                return Json(new { status = "ERROR", data = "error" });
+                return Json(new { status = "ERROR", data = ex.Message });
             }
+
         }
 
         [Route("~/ManagementController/Facility")]
         [HttpPost]
         public async Task<ActionResult> Facility(Facility facility)
         {
+            if (facility.NewId != null)
+            {
+                facility.Id = facility.NewId;
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        var result = await _facilityService.Create(facility);
+
+                        if (result != null && result.ResponseResult.Errors == null)
+                        {
+                            ViewBag.Status = "Facility con ID " + result.Reference.FacilityNumber + " ha sido registrado";
+                            facility = new Facility();
+                        }
+                        else
+                        {
+                            ViewBag.Status = result.ResponseResult.Errors.FirstOrDefault().ErrorMessage;
+                            facility = new Facility();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new RequestErrorException(ex.Message);
+                    }
+                }
+            }
+
+            ModelState.Clear();
+
             var countries = GetCountries();
             ViewBag.Countries = CountriesFillDropDown(countries.Items);
 
             var eoids = GetEOIDS();
-            ViewBag.EOIDs = FillDropDown(eoids.Items);
+            ViewBag.EOIDs = FillDropDown(eoids);
 
             var fids = GetFIDS("");
-            ViewBag.FIDs = FillDropDown(fids.Items);
+            ViewBag.FIDs = FillDropDown(fids);
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    int newFacilityId = await _facilityService.Create(facility);
-                    facility.Id = newFacilityId.ToString();
-                }
-                catch
-                {
-                    throw new RequestErrorException("Error creando el Facility ");
-                }
-            }
             return View("Facilities", facility);
         }
 
@@ -213,10 +240,10 @@ namespace PlataformaWEB.Controllers
             var model = new Machine();
 
             var eoids = GetEOIDS();
-            ViewBag.EOIDs = FillDropDown(eoids.Items);
+            ViewBag.EOIDs = FillDropDown(eoids);
 
             var fids = GetFIDS("");
-            ViewBag.FIDs = FillDropDown(fids.Items);
+            ViewBag.FIDs = FillDropDown(fids);
 
             var mids = GetMIDS("");
             ViewBag.MIDs = FillDropDown(mids.Items);
@@ -277,10 +304,10 @@ namespace PlataformaWEB.Controllers
         public async Task<ActionResult> Machine(Machine machine)
         {
             var eoids = GetEOIDS();
-            ViewBag.EOIDs = FillDropDown(eoids.Items);
+            ViewBag.EOIDs = FillDropDown(eoids);
 
             var fids = GetFIDS("");
-            ViewBag.FIDs = FillDropDown(fids.Items);
+            ViewBag.FIDs = FillDropDown(fids);
 
             var mids = GetMIDS("");
             ViewBag.MIDs = FillDropDown(mids.Items);
@@ -309,10 +336,10 @@ namespace PlataformaWEB.Controllers
             var model = new Request();
 
             var eoids = GetEOIDS();
-            ViewBag.EOIDs = FillDropDown(eoids.Items);
+            ViewBag.EOIDs = FillDropDown(eoids);
 
             var fids = GetFIDS("");
-            ViewBag.FIDs = FillDropDown(fids.Items);
+            ViewBag.FIDs = FillDropDown(fids);
 
             var mids = GetMIDS("");
             ViewBag.MIDs = FillDropDown(mids.Items);
@@ -340,10 +367,10 @@ namespace PlataformaWEB.Controllers
         public async Task<ActionResult> Request(Request request)
         {
             var eoids = GetEOIDS();
-            ViewBag.EOIDs = FillDropDown(eoids.Items);
+            ViewBag.EOIDs = FillDropDown(eoids);
 
             var fids = GetFIDS("");
-            ViewBag.FIDs = FillDropDown(fids.Items);
+            ViewBag.FIDs = FillDropDown(fids);
 
             var mids = GetMIDS("");
             ViewBag.MIDs = FillDropDown(mids.Items);
@@ -392,43 +419,29 @@ namespace PlataformaWEB.Controllers
         }
 
         // DropDowns
-        private PaginatedList<string> GetEOIDS()
+        private List<string> GetEOIDS()
         {
-            List<string> eoids = new List<string>();
-            eoids.Add("EOID1");
-            eoids.Add("EOID2");
-            eoids.Add("EOID3");
-            eoids.Add("EOID4");
-            eoids.Add("EOID5");
-
-            var eoidsPL = new PaginatedList<string>()
+            var eoids = _economicOperatorService.GetEOIDS();
+            if (eoids.Result != null)
             {
-                Items = eoids
-            };
-
-            return eoidsPL;
-        }
-
-        private PaginatedList<string> GetFIDS(string eoid)
-        {
-            List<string> fids = new List<string>();
-            fids.Add("FID1");
-            fids.Add("FID2");
-            fids.Add("FID3");
-            fids.Add("FID4");
-            fids.Add("FID5");
-
-            var fidsPL = new PaginatedList<string>()
-            {
-                Items = fids
-            };
-            if (eoid == "EOID1")
-            {
-                return fidsPL;
+                return eoids.Result;
             }
             else
             {
-                return new PaginatedList<string>();
+                return new List<string>();
+            }          
+        }
+
+        private List<string> GetFIDS(string eoid)
+        {
+            var fids = _facilityService.GetFIDsByEOID(eoid);
+            if (fids.Result != null)
+            {
+                return fids.Result;
+            }
+            else
+            {
+                return new List<string>();
             }
         }
 

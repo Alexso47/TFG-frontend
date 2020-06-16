@@ -67,7 +67,7 @@ namespace PlataformaWEB.Controllers
                 
                 if (result.ResponseResult.Errors == null)
                 {
-                    ViewBag.Status = "Recepcion con ID " + result.Reference.ArrivalNumber + " registrada";
+                    ViewBag.Status = "Recepcion con ID " + result.Reference.ArrivalNumber + " ha sido registrada";
                     arrival = new Arrival();
                 }
                 else
@@ -140,7 +140,7 @@ namespace PlataformaWEB.Controllers
 
                 if (result.ResponseResult.Errors == null)
                 {
-                    ViewBag.Status = "La recepcion con ID " + dispatch.Facility + " registrada";
+                    ViewBag.Status = "La recepcion con ID " + dispatch.Facility + " ha sido registrada";
                     dispatch = new Dispatch();
                 }
                 else
@@ -224,7 +224,7 @@ namespace PlataformaWEB.Controllers
 
                     if (result.ResponseResult.Errors == null)
                     {
-                        ViewBag.Status = "Factura con ID " + invoice.Id + " registrada";
+                        ViewBag.Status = "Factura con ID " + invoice.Id + " ha sido registrada";
                         invoice = new Invoice();
                     }
                     else

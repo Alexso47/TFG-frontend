@@ -15,13 +15,14 @@ using PlataformaWEB.Dto;
 using PlataformaWEB.Exceptions;
 using System.IO;
 using System.Xml.Linq;
+using PlataformaWEB.Models.PostRequests.EO;
 
 namespace PlataformaWEB.Services
 {
     public class EconomicOperatorService : IEconomicOperatorService
     {
         private HttpClient _httpClient;
-        private readonly string _remoteServiceBaseUrl;
+        private  string _remoteServiceBaseUrl;
         private static string _connectionOptions;
 
         public EconomicOperatorService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
@@ -30,64 +31,66 @@ namespace PlataformaWEB.Services
             _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/eo";
         } 
 
-        async public Task<int> Create(EconomicOperator economicOperator)
+        async public Task<EOResponse> Create(EconomicOperator economicOperator)
         {
             var uri = API.EconomicOperator.CreateEconomicOperator(_remoteServiceBaseUrl);
             var economicOperatorDto = EconomicOperatorViewModelToDto(economicOperator);
             var jsonInString = JsonConvert.SerializeObject(economicOperatorDto);
             var response = await _httpClient.PostAsync(uri, new StringContent(jsonInString, Encoding.UTF8, "application/json"));
+            
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new Exception("Error creating economic operator");
+                throw new Exception("Error creando el economic operator");
             }
-            if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
-            {
-                var errorMessage = await response.Content.ReadAsStringAsync();
-                if (errorMessage.Contains("CodeAlreadyExists"))
-                {
-                    throw new RequestErrorException("Create");
-                }
-                if (errorMessage.Contains("CodeHasExisted"))
-                {
-                    throw new RequestErrorException("Create");
-                }
-            }
-            response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
-            var createdEconomicOperator = JsonConvert.DeserializeObject<EconomicOperatorDto>(responseString);
-            return Int32.Parse(createdEconomicOperator.Id);
+            var result = JsonConvert.DeserializeObject<EOResponse>(responseString);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+                return result;
+            }
+            catch
+            {
+                return result;
+            }
         }
 
-        async public Task<PaginatedList<string>> GetEOIDs()
+        async public Task<List<string>> GetEOIDS()
         {
-            var uri = API.EconomicOperator.GetEOIDs(_remoteServiceBaseUrl);
+            var uri = API.EconomicOperator.GetEOIDS(_remoteServiceBaseUrl);
             var response = await _httpClient.GetAsync(uri);
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new Exception("Error getting Economic Operators IDs");
+                throw new Exception("Error obteniendo los Economic Operators IDs");
             }
             response.EnsureSuccessStatusCode();
             var jsonResult = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<PaginatedList<string>>(jsonResult);
+            var result = JsonConvert.DeserializeObject<List<string>>(jsonResult);
             return result;
         }
 
-        public async Task<EconomicOperator> GetEconomicOperatorByEOID(string eoid)
+        public async Task<EOResult> GetEconomicOperatorByEOID(string eoid)
         {
             var uri = API.EconomicOperator.GetEOInfo(_remoteServiceBaseUrl, eoid);
             var response = await _httpClient.GetAsync(uri);
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new Exception("Error getting Economic Operators Info");
+                throw new Exception("Error obteniendo Economic Operators");
             }
             response.EnsureSuccessStatusCode();
             var jsonResult = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<EconomicOperator>(jsonResult);
+            var result = JsonConvert.DeserializeObject<EOResult>(jsonResult);
             return result;
         }
 
         private EconomicOperatorDto EconomicOperatorViewModelToDto(EconomicOperator economicOperator)
         {
+            RequestHeader requestHeader = new RequestHeader();
+            requestHeader.DateRequest = DateTimeOffset.UtcNow.ToString("yyyyMMdd");
+            requestHeader.TimeRequest = DateTimeOffset.UtcNow.ToString("hhmmss");
+            requestHeader.RequestId = Guid.NewGuid().ToString();
+
             return new EconomicOperatorDto()
             {
                 Id = economicOperator.Id,
@@ -97,7 +100,8 @@ namespace PlataformaWEB.Services
                 City = economicOperator.City,
                 ZipCode = economicOperator.ZipCode,
                 Country = economicOperator.Country,
-                Description = economicOperator.Description
+                Description = economicOperator.Description,
+                RequestHeader = requestHeader
             };
         }
 

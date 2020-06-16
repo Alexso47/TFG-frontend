@@ -1,7 +1,7 @@
 @model PlataformaWEB.Models.EconomicOperator
 
 @{
-    ViewData["Title"] = "EconomicOperators";
+    ViewData["Title"] = "Economic Operators";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,9 +25,11 @@
     function NewEconomicOperator() {
         $("#new-EOIDs").css("display", "flex");
         $("#edit-EOIDs").css("display", "none");
+        $("#buttonCancel").css("display", "inline-block");
+        $("#buttonSubmit").css("display", "inline-block");
         CleanFields();
     }
-    
+
     function editEOID(value) {
         var modelId = value.options[value.selectedIndex].text;
         CleanFields();
@@ -35,7 +37,7 @@
         $.ajax({
             cache: false,
             type: 'GET',
-            url: '/ManagementController/EditEconomicOperator',
+            url: '/ManagementController/GetEO',
             data: {
                 eoid : modelId
             },
@@ -56,7 +58,14 @@
             }
         })
     }
-    
+
+    $(document).ready(function () {
+    var status = '@ViewBag.Status';
+    if (status != '') {
+        alert(status);
+    }
+    });
+
 
 </script>
 
@@ -80,7 +89,7 @@
         <div class="row" id="new-EOIDs">
             <label class="col-2 control-label">Id*</label>
             <div class="col-9">
-                <input asp-for="Id" placeholder="EconomicOperator" id="eoid-id" data-val-required="El campo EOID no debe estar vacío" />
+                <input asp-for="NewId" placeholder="EconomicOperator" id="eoid-id" data-val-required="El campo EOID no debe estar vacío" />
                 <div class="row">
                     <span asp-validation-for="Id" class="text-danger"></span>
                 </div>
@@ -148,12 +157,12 @@
                 </button>
             </div>
             <div class="col-7" style="text-align:right">
-                <button type="button" id="buttonCancel" class="btn btn-default" onclick="javascript:window.location.reload(false);">
+                <button type="button" id="buttonCancel" style="display:none;" class="btn btn-default" onclick="javascript:window.location.reload(false);">
                     Cancelar
                 </button>
             </div>
             <div class="col-2" style="text-align:right">
-                <button class="btn btn-primary" id="buttonSubmit" type="submit">
+                <button class="btn btn-primary" id="buttonSubmit" type="submit" style="display:none;">
                     <i class="fa fa-save"></i>
                     Guardar
                 </button>

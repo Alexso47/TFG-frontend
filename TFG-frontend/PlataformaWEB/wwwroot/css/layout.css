@@ -180,7 +180,7 @@ nav {
     min-height:1200px;
 }
 
-@media screen and (max-height: 1000px) {
+@media screen and (max-height: 900px) {
     #side_nav, #page_content {
         width:100%;
     }

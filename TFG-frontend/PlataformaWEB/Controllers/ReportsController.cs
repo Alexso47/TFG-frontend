@@ -173,7 +173,8 @@ namespace PlataformaWEB.Controllers
                 }
                 else if (filters.DocAction == "Update" && filters.Email != null && filters.Email != "")
                 {
-                    result = UpdateInvoiceDocument((List<InvoiceReport>)invoices.Result.Items, filters.Email, filters.Interval).Result;
+                    filters = FormatFilters(filters);
+                    result = UpdateInvoiceDocument((List<InvoiceReport>)invoices.Result.Items, filters.Email, filters.Interval, filters).Result;
                 }
 
                 if (result == "OK")
@@ -187,6 +188,15 @@ namespace PlataformaWEB.Controllers
                 throw new RequestErrorException("Error obteniendo las facturas");
             }
             return View("Invoice",filters);
+        }
+
+        public InvoiceFilters FormatFilters(InvoiceFilters filters)
+        {
+            if (filters.Id == null) { filters.Id = 0; }
+            if (filters.Price == null) { filters.Price = 0; }
+            if (filters.BuyerID == null) { filters.BuyerID = ""; }
+            if (filters.Currency == null) { filters.Currency = ""; }
+            return filters;
         }
 
         public ActionResult Order()
@@ -415,7 +425,7 @@ namespace PlataformaWEB.Controllers
 
         [Route("~/ReportsController/UpdateInvoiceDocument")]
         [HttpPost]
-        public async Task<string> UpdateInvoiceDocument(List<InvoiceReport> results, string email, string interval)
+        public async Task<string> UpdateInvoiceDocument(List<InvoiceReport> results, string email, string interval, InvoiceFilters filters)
         {
             try
             {
@@ -423,7 +433,8 @@ namespace PlataformaWEB.Controllers
                 {
                     Items = results,
                     Email = email,
-                    Interval = interval
+                    Interval = interval,
+                    Filters = filters
                 };
 
                 var result = await _reportToEmail.UpdateInvoiceReportToEmail(report);

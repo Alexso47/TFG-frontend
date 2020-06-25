@@ -20,11 +20,14 @@ namespace PlataformaWEB.Services
     public class ReportEmailService : IReportEmailService
     {
         private HttpClient _httpClient;
-        private readonly string _remoteServiceBaseUrl;
+        private readonly string _remoteServiceBaseUrl; 
+        private static string _connectionOptions;
 
-        public ReportEmailService(HttpClient httpClient, IOptions<AppSettings> settings)
+
+        public ReportEmailService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop;
         }
 
         public async Task<string> CreateArrivalReportToEmail(ArrivalReportToEmail results)
@@ -69,6 +72,7 @@ namespace PlataformaWEB.Services
 
         public async Task<string> UpdateInvoiceReportToEmail(InvoiceReportToEmail results)
         {
+            //var filterUri = API.Invoice.GetFilteredInvoicesLA(_remoteServiceBaseUrl + "/api/invoice", filters);
             var jsonInString = JsonConvert.SerializeObject(results);
             var uri = API.EmailReport.UpdateInvoiceReportToEmail();
 

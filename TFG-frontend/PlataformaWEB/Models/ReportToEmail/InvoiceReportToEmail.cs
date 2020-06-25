@@ -8,5 +8,6 @@ namespace PlataformaWEB.Models.ReportToEmail
     public class InvoiceReportToEmail : ReportToEmail
     {
         public List<InvoiceReport> Items { get; set; }
+        public InvoiceFilters Filters { get; set; }
     }
 }

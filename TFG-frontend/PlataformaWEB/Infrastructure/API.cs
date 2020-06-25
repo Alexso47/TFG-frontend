@@ -254,6 +254,25 @@ namespace PlataformaWEB.Infrastructure
                     $"&buyerid={HttpUtility.UrlEncode(filters.BuyerID)}";
 
             }
+
+            public static string GetFilteredInvoicesLA(string baseUri, InvoiceFilters filters)
+            {
+                var id = filters.Id != null ? filters.Id : 0;
+                var price = filters.Price != null ? filters.Price : 0;
+
+                string from = filters.From.HasValue  ? filters.From.Value.Date.ToString("yyyy-MM-dd") : string.Empty;
+                string to = filters.To.HasValue ? filters.To.Value.Date.ToString("yyyy-MM-dd") : string.Empty;
+
+                return $"" +
+                    $"CreationDateFrom_{from}" +
+                    $"1sep1CreationDateTo_{to}" +
+                    $"1sep1id_{id}" +
+                    $"1sep1price_{price}" +
+                    $"1sep1currency_{HttpUtility.UrlEncode(filters.Currency)}" +
+                    $"1sep1buyereu_{filters.BuyerEU}" +
+                    $"1sep1buyerid_{HttpUtility.UrlEncode(filters.BuyerID)}";
+
+            }
         }
         public static class Dispatch
         {

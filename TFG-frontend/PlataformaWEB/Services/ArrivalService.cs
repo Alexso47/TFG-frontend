@@ -60,7 +60,7 @@ namespace PlataformaWEB.Services
             var response = await _httpClient.GetAsync(uri);
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new Exception("Error obteniendo los envíos");
+                throw new Exception("Error obteniendo las recepciones");
             }
 
             response.EnsureSuccessStatusCode();
@@ -75,7 +75,7 @@ namespace PlataformaWEB.Services
             var response = await _httpClient.GetAsync(uri);
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new Exception("Error obteniendo los envíos");
+                throw new Exception("Error obteniendo las recepciones");
             }
 
             response.EnsureSuccessStatusCode();

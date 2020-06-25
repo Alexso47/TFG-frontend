@@ -526,7 +526,7 @@ namespace PlataformaWEB.Controllers
         private List<SelectListItem> FillDropDown(IEnumerable<string> list)
         {
             var aux = new List<SelectListItem>();
-            var white = new SelectListItem("", "");
+            var white = new SelectListItem("- Selecciona -", "");
             aux.Add(white);
             if (list != null)
             {
@@ -545,7 +545,7 @@ namespace PlataformaWEB.Controllers
         private List<SelectListItem> CountriesFillDropDown(IEnumerable<Country> list)
         {
             var countries = new List<SelectListItem>();
-            var white = new SelectListItem("", "");
+            var white = new SelectListItem("- Selecciona -", "");
             countries.Add(white);
             foreach (var item in list)
             {

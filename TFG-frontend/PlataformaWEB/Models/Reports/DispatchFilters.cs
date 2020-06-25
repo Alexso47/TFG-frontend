@@ -20,5 +20,9 @@ namespace PlataformaWEB.Models
 
         public string Vehicle { get; set; }
 
+        public string DocAction { get; set; }
+        public string Email { get; set; }
+        public string Interval { get; set; }
+
     }
 }

@@ -17,5 +17,9 @@ namespace PlataformaWEB.Models
         public float? Price { get; set; }
 
         public string Currency { get; set; }
+
+        public string DocAction { get; set; }
+        public string Email { get; set; }
+        public string Interval { get; set; }
     }
 }

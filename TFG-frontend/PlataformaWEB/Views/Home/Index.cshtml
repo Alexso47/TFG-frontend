@@ -1,8 +1,72 @@
 
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+@{ 
+    ViewData["Title"] = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
 }
 
-<h1>Index</h1>
+<div class="sep"></div>
 
+<link rel="stylesheet" href="~/css/mainbody.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+<link href="~/css/Tables.css" rel="stylesheet" />
+
+<div class="row" id="content_data">
+    <h1 class="col-3 subtitle">GESTION</h1>
+    <div class="col-5">
+        <a style="border-left: 1px solid black;" asp-controller="Management"
+           asp-action="EconomicOperator">EconomicOperator</a>
+        <a asp-controller="Management"
+           asp-action="Facility">Facilities</a>
+    </div>
+</div>
+<div class="sep"></div>
+<div class="row" id="content_data " style="margin-bottom:50px;">
+    <h1 class="col-3 subtitle">OPERACIONES</h1>
+    <div class="col-5">
+        <a style="border-left: 1px solid black;" asp-controller="Operations"
+           asp-action="Invoice">Factura</a>
+        <a asp-controller="Operations"
+           asp-action="Dispatch">Envio</a>
+        <a asp-controller="Operations"
+           asp-action="Arrival">Recepcion</a>
+    </div>
+</div>
+<div class="sep"></div>
+<div class="row" id="content_data">
+    <h1 class="col-3 subtitle">INFORMES</h1>
+    <div class="col-5">
+        <a style="border-left: 1px solid black;" asp-controller="Reports"
+           asp-action="Invoice">Facturas</a>
+        <a asp-controller="Reports"
+           asp-action="Dispatch">Envios</a>
+        <a asp-controller="Reports"
+           asp-action="Arrival">Recepciones</a>
+        <a asp-controller="Reports"
+           asp-action="Serial">Seriales</a>
+    </div>
+</div>
+<div class="sep"></div>
+
+<style>
+    .subtitle{
+        text-align:center;
+    }
+
+    .col-5{
+        text-align:center;
+    }
+
+    a {
+        padding: 20px;
+        font-size: 25px;
+        text-decoration: none;
+        color: black;
+        border-right: 1px solid black;
+        text-align:center;
+    }
+
+        a:hover {
+            background-color:#f7f7f7;
+        }
+
+</style>

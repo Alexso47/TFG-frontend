@@ -28,7 +28,7 @@ namespace PlataformaWEB.Services
         public EconomicOperatorService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/eo";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/eo";
         } 
 
         async public Task<EOResponse> Create(EconomicOperator economicOperator)

@@ -44,7 +44,7 @@
         <div class="row" id="content_data">
             <label class="col-2 control-label">Id*</label>
             <div class="col-3">
-                <input asp-for="Id" placeholder="Número de factura" />
+                <input asp-for="Id" type="number" placeholder="Número de factura" />
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
             <label class="col-3 control-label">Fecha de facturación*</label>
@@ -58,7 +58,7 @@
         <div class="row" id="content_data">
             <label class="col-2 control-label">Precio neto*</label>
             <div class="col-3">
-                <input asp-for="Price" placeholder="Precio neto" />
+                <input asp-for="Price" type="" placeholder="Precio neto" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <label class="col-2 control-label">Moneda*</label>

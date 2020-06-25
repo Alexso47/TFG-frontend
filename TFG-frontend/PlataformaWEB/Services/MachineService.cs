@@ -24,7 +24,7 @@ namespace PlataformaWEB.Services
         public MachineService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/machine";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/machine";
         }
 
         async public Task<int> Create(Machine machine)

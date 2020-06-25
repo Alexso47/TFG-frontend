@@ -26,7 +26,7 @@ namespace PlataformaWEB.Services
         public FacilityService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/facility";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/facility";
         }
 
         async public Task<FacilityResponse> Create(Facility facility)

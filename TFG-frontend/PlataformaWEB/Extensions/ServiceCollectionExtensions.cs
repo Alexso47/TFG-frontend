@@ -28,6 +28,8 @@ namespace PlataformaWEB.Extensions
             services.AddHttpClient<IDispatchService, DispatchService>();
            
             services.AddHttpClient<ISerialService, SerialService>();
+            
+            services.AddHttpClient<IReportEmailService, ReportEmailService>();
 
             return services;
         }

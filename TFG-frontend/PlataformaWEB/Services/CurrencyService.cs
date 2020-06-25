@@ -28,7 +28,7 @@ namespace PlataformaWEB.Services
         public CurrencyService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/currency";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/currency";
         }
 
         async public Task<PaginatedList<string>> GetCurrencies()

@@ -25,7 +25,7 @@ namespace PlataformaWEB.Services
         public ArrivalService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/arrival";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/arrival";
         }
 
         async public Task<ArrivalResponse> Register(Arrival arrival)
@@ -60,7 +60,7 @@ namespace PlataformaWEB.Services
             var response = await _httpClient.GetAsync(uri);
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new Exception("Error obteniendo los envíos");
+                throw new Exception("Error obteniendo las recepciones");
             }
 
             response.EnsureSuccessStatusCode();
@@ -75,7 +75,7 @@ namespace PlataformaWEB.Services
             var response = await _httpClient.GetAsync(uri);
             if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                throw new Exception("Error obteniendo los envíos");
+                throw new Exception("Error obteniendo las recepciones");
             }
 
             response.EnsureSuccessStatusCode();

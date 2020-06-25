@@ -11,5 +11,9 @@ namespace PlataformaWEB.Models
         public int? Id { get; set; }
 
         public string Serial { get; set; }
+
+        public string DocAction { get; set; }
+        public string Email { get; set; }
+        public string Interval { get; set; }
     }
 }

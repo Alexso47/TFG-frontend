@@ -25,7 +25,7 @@ namespace PlataformaWEB.Services
         public RequestService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/request";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/request";
         }
 
         async public Task<int> Create(Request request)

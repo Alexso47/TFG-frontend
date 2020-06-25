@@ -25,7 +25,7 @@ namespace PlataformaWEB.Services
         public SerialService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/serial";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/serial";
         }
 
         public async Task<PaginatedList<SerialReport>> GetFilteredSerials(SerialFilters filters)

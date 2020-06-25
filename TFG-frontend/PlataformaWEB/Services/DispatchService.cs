@@ -26,7 +26,7 @@ namespace PlataformaWEB.Services
         public DispatchService(HttpClient httpClient, IOptions<AppSettings> settings, ConnectionOptions connectionOptions)
         {
             _httpClient = httpClient;
-            _remoteServiceBaseUrl = connectionOptions.apiLocal + "/api/dispatch";
+            _remoteServiceBaseUrl = connectionOptions.apiDevelop + "/api/dispatch";
         }
 
         public async Task<DispatchResponse> RegisterDispatch(Dispatch dispatch)

@@ -76,7 +76,8 @@ namespace PlataformaWEB.Controllers
 
                 if(result == "OK")
                 {
-                    ViewBag.Status = "El documento se ha enviado a " + filters.Email + " ";
+                    ViewBag.Status = "El documento se ha enviado a " + filters.Email + ". " +
+                        "Puede tardar alrededor de un minuto en recibir el correo.";
                 }
             }
             catch
@@ -127,7 +128,8 @@ namespace PlataformaWEB.Controllers
 
                 if (result == "OK")
                 {
-                    ViewBag.Status = "El documento se ha enviado a " + filters.Email + " ";
+                    ViewBag.Status = "El documento se ha enviado a " + filters.Email + ". " +
+                        "Puede tardar alrededor de un minuto en recibir el correo.";
                 }
             }
             catch
@@ -176,7 +178,8 @@ namespace PlataformaWEB.Controllers
 
                 if (result == "OK")
                 {
-                    ViewBag.Status = "El documento se ha enviado a " + filters.Email + " ";
+                    ViewBag.Status = "El documento se ha enviado a " + filters.Email + ". " +
+                        "Puede tardar alrededor de un minuto en recibir el correo.";
                 }
             }
             catch
@@ -240,7 +243,8 @@ namespace PlataformaWEB.Controllers
 
                 if (result == "OK")
                 {
-                    ViewBag.Status = "El documento se ha enviado a " + filters.Email + " ";
+                    ViewBag.Status = "El documento se ha enviado a " + filters.Email + ". " +
+                        "Puede tardar alrededor de un minuto en recibir el correo.";
                 }
             }
             catch
